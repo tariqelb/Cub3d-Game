@@ -1,0 +1,16 @@
+NO  ./map/North_texture.xpm
+
+
+SO  ./map/South_texture.xpm
+
+WE   ./map/West_texture.xpm
+
+EA  ./map/East_texture.xpm
+
+F       255,255,255
+
+C          20,200,255
+
+11111
+10N01
+11111
