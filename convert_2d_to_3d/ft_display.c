@@ -36,7 +36,7 @@ void	ft_camera(t_cub3d **cub)
 	else
 		cub[0]->cmr = dec;
 }
-
+// display texture of the wall instead of the colors.
 void	ft_screan_display(t_cub3d *cub)
 {
 	int i;
@@ -47,7 +47,7 @@ void	ft_screan_display(t_cub3d *cub)
 	ft_camera(&cub);
 	index = 0;
 	j = 0;
-	while (index < 1699 && j < WIDTH - 1)
+	while (index < (WIDTH - 1) && j < WIDTH - 1)
 	{
 		i = 0;
 		mid = cub->ray_height[index][2] / 2;
