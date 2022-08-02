@@ -18,7 +18,7 @@ void	ft_position_in_pixel(t_cub3d **cub, int xyz[3], int x, int max_y)
 	cub[0]->p_pos[1] = (50) * xyz[0] + ((50) / 2);
 	if (xyz[2] == 'N')
 		cub[0]->p_ort = 0;
-	if (xyz[2] == 'A')
+	if (xyz[2] == 'W')
 		cub[0]->p_ort = 100;
 	if (xyz[2] == 'S')
 		cub[0]->p_ort = 200;
@@ -48,7 +48,7 @@ void	ft_get_p_position(t_cub3d **cub)
 		while (cub[0]->map[x][y++])
 		{
 			if (cub[0]->map[x][y] == 'N' || cub[0]->map[x][y] == 'S'
-					|| cub[0]->map[x][y] == 'A' || cub[0]->map[x][y] == 'E')
+					|| cub[0]->map[x][y] == 'W' || cub[0]->map[x][y] == 'E')
 			{
 				xyz[0] = x;
 				xyz[1] = y;

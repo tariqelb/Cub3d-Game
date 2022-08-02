@@ -46,8 +46,12 @@ int	ft_check_middle_lines(char *line, int *spc, int *ort)
 	int	len;
 	int	i;
 
+	i = 0;
 	len = ft_strlen(line);
 	if (len < 2)
+		return (1);
+	i = ft_skip_space(line, i);
+	if (line[i] != '1')
 		return (1);
 	if (line[len - 1] != '1')
 		return (1);
