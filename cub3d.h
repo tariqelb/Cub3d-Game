@@ -68,6 +68,7 @@ typedef struct s_cub3d
 	void	*spt2;
 	void	*spt3;
 	int		shot;
+	int		text_x[2001];
 }	t_cub3d;
 
 typedef struct s_img

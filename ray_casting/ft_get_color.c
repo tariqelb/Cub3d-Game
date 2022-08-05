@@ -49,6 +49,55 @@ int	ft_chose_color(t_cub3d **cub, int turn, int x, int y)
 	return (ft_chose_color_number(closest));
 }
 
+
+int	ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn)
+{
+	double	adj;
+	double	opp;
+	int	x;
+	int	y;
+
+	opp = ft_calc_opposite(cub[0]->angle, hyp);
+	adj = ft_calc_adjacent(cub[0]->angle, hyp);
+	ft_virtual_pos_of_ray(&cub[0], turn, adj, opp);
+	y = cub[0]->ray_pos[turn][0] / (int) cub[0]->cell_w_h[0];
+	x = cub[0]->ray_pos[turn][1] / (int) cub[0]->cell_w_h[1];
+	if (i == x && j < y)
+	{
+		cub[0]->ray_height[turn][3] = 1;
+		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][1] ) % 50);
+	}
+	else if (i == x && j > y)
+	{
+
+		cub[0]->ray_height[turn][3] = 2;
+		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][1] % 50);
+
+	}
+	else if (j == y && i < x)
+	{
+		cub[0]->ray_height[turn][3] = 3;
+		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][0] % 50);
+	}
+	else if (j == y && i > x)
+	{
+		cub[0]->ray_height[turn][3] = 4,
+		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][0] % 50);
+	}
+	else if (turn > 0)
+	{
+		cub[0]->text_x[turn] = 	((int)cub[0]->ray_height[turn - 1][1] % 50),
+		cub[0]->ray_height[turn][3] = 	cub[0]->ray_height[turn - 1][3];
+	}
+	else
+		cub[0]->text_x[turn] = (cub[0]->ray_height[turn][1] % 50),
+		cub[0]->ray_height[turn][3] = ft_chose_color(cub, turn, x, y);
+	if (turn == 1)	
+		cub[0]->ray_height[turn - 1][3] = (cub[0]->ray_height[turn][3] % 50);
+	return (0);
+}
+
+/*
 int	ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn)
 {
 	double	adj;
@@ -76,4 +125,4 @@ int	ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn)
 	if (turn == 1)	
 		cub[0]->ray_height[turn - 1][3] = cub[0]->ray_height[turn][3];
 	return (0);
-}
+}*/

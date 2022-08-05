@@ -25,6 +25,8 @@ int	ft_is_ray_hit_the_wall(t_cub3d **cub, int hyp, int turn)
 		k++;
 	if (cub[0]->map[i][k] == '1' || (cub[0]->map[i][k] == '0' && ft_corner(cub, cub[0]->angle, i, j)))
 	{
+		if (turn < 500)
+			printf("--> %f   %f\n", cub[0]->ray_pos[turn][0] , cub[0]->ray_pos[turn][1]);
 		cub[0]->ray_height[turn][0] = cub[0]->ray_pos[turn][0];
 		cub[0]->ray_height[turn][1] = cub[0]->ray_pos[turn][1];
 		ft_previews_cell(cub, hyp - 1, i, j, turn);

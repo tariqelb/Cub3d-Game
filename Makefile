@@ -32,9 +32,9 @@ OBJS = $(SRCS:.c=.o)
 
 FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
+MLX_FLAGS = -L /usr/X11/lib/ -lmlx -framework OpenGL  -framework AppKit
 
-MLX_HEADER = /usr/locale/include
+MLX_HEADER = /usr/X11/include
 
 CC = cc
 
