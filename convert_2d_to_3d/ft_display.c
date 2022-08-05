@@ -24,13 +24,25 @@ void	img_pix_put(t_cub3d *cub, int x, int y, int color)
 int	get_color(t_cub3d *cub, int x, int y, int index)
 {
 	if (cub->ray_height[index][3] == 3)
-		return (*(int *)cub->n_txtr.addr + (y * cub->n_txtr.line_len + x * (cub->n_txtr.bpp / 8)));
+	{
+		//printf ("%d\n", *(int *)cub->n_txtr.addr + (y * cub->n_txtr.line_len + x * (cub->n_txtr.bpp / 8)));
+		return (*(int *)(cub->n_txtr.addr + (y * cub->n_txtr.line_len + x * (cub->n_txtr.bpp / 8))));
+	}
 	else if (cub->ray_height[index][3] == 4)
-		return (*(int *)cub->s_txtr.addr + (y * cub->s_txtr.line_len + x * (cub->s_txtr.bpp / 8)));
+	{
+		//printf ("%d\n", *(int *)cub->s_txtr.addr + (y * cub->s_txtr.line_len + x * (cub->s_txtr.bpp / 8)));
+		return (*(int *)(cub->s_txtr.addr + (y * cub->s_txtr.line_len + x * (cub->s_txtr.bpp / 8))));
+	}
 	else if (cub->ray_height[index][3] == 2)
-		return (*(int *)cub->w_txtr.addr + (y * cub->w_txtr.line_len + x  * (cub->w_txtr.bpp / 8)));
+	{
+		//printf("%d\n", *(int *)cub->w_txtr.addr + (y * cub->w_txtr.line_len + x  * (cub->w_txtr.bpp / 8)));
+		return (*(int *)(cub->w_txtr.addr + (y * cub->w_txtr.line_len + x  * (cub->w_txtr.bpp / 8))));
+	}
 	else if (cub->ray_height[index][3] == 1)
-		return (*(int *)cub->e_txtr.addr + (y * cub->e_txtr.line_len + x  * (cub->e_txtr.bpp / 8)));
+	{
+		//printf("%d\n", *(int *)cub->e_txtr.addr + (y * cub->e_txtr.line_len + x  * (cub->e_txtr.bpp / 8)));
+		return (*(int *)(cub->e_txtr.addr + (y * cub->e_txtr.line_len + x  * (cub->e_txtr.bpp / 8))));
+	}
 	return (0);
 }
 
@@ -75,13 +87,13 @@ void	ft_screan_display(t_cub3d *cub)
 			else if ((i >= ((HEIGHT / 2) - mid)) && (i <= ((HEIGHT / 2) + mid)))
 			{
 				if (cub->ray_height[index][3] == 1)
-					img_pix_put(&cub[0], j, i,  get_color(cub, v_x /*(int)cub->text_x[index]*/ , (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, cub->text_x[index] , (int)((double)(50.0 * (double)(i - ((HEIGHT / 2) - mid)) / cub->ray_height[index][2]) ) % 50, index));
 				else if (cub->ray_height[index][3] == 2)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*(int)cub->text_x[index] */, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, cub->text_x[index] , (int)((double)(50.0 * (double)(i - ((HEIGHT / 2) - mid)) / cub->ray_height[index][2])) % 50, index));
 				else if (cub->ray_height[index][3] == 3)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*(int)cub->text_x[index] */ , (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, cub->text_x[index] , (int)((double)(50.0 * (double)(i - ((HEIGHT / 2) - mid)) / cub->ray_height[index][2])) % 50, index));
 				else if (cub->ray_height[index][3] == 4)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*(int)cub->text_x[index] */, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, cub->text_x[index] , (int)((double)(50.0 * (double)(i - ((HEIGHT / 2) - mid)) / cub->ray_height[index][2])) % 50, index));
 			}
 			i++;
 		}
@@ -89,7 +101,9 @@ void	ft_screan_display(t_cub3d *cub)
 		j++;
 		v_x++;
 	}
-}/*
+}
+/*
+
 void	ft_screan_display(t_cub3d *cub)
 {
 	int i;
@@ -97,13 +111,29 @@ void	ft_screan_display(t_cub3d *cub)
 	int	mid;
 	int	index;
 	int	color;
+	int v_x;
+	int flep;
 
+	v_x = 0;
+	flep = 0;
 	ft_camera(&cub);
 	index = 0;
 	i = 0;
 	j = 0;
 	while (index < WIDTH && j < WIDTH - 1)
 	{
+		if (flep == 0)
+				flep = cub->ray_height[index][3];
+		if (flep != cub->ray_height[index][3])
+		{
+			flep = cub->ray_height[index][3];
+			v_x = 0;
+		}
+		if (v_x == 0)
+			v_x = cub->text_x[index];
+		if (v_x == 50)
+			v_x = 0;
+		//printf("===> x = %d\n", v_x);
 		i = 0;
 		mid = cub->ray_height[index][2] / 2;
 		while (i < HEIGHT)
@@ -115,23 +145,22 @@ void	ft_screan_display(t_cub3d *cub)
 			else if ((i >= ((HEIGHT / 2) - mid)) && (i <= ((HEIGHT / 2) + mid)))
 			{
 				if (cub->ray_height[index][3] == 1)
-					img_pix_put(&cub[0], j, i,  get_color(cub, cub[0].text_x[index], (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i,  get_color(cub,  (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 2)
-					img_pix_put(&cub[0], j, i, get_color(cub, cub[0].text_x[index], (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 3)
-					img_pix_put(&cub[0], j, i, get_color(cub, cub[0].text_x[index], (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index]  , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 4)
-					img_pix_put(&cub[0], j, i, get_color(cub, cub[0].text_x[index], (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 			}
 			i++;
 		}
-		//if (j % cub->cmr == 0)
-			index++;
+		index++;
 		j++;
+		v_x++;
 	}
-}*/
-
-
+}
+*/
 // last and correct version of display
 
 void	ft_camera(t_cub3d **cub)

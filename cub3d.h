@@ -153,9 +153,9 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 // INIT
 // ft_initialize_struct_util.c
 int		ft_get_numbers(char *elem);
-void	*ft_get_texture(t_cub3d *cub, void *texture, char *elem);
-int		ft_check_texture(t_cub3d *cub);
-int		ft_fill_cub_texture(t_cub3d *cub, char **elems);
+void	*ft_get_texture(t_cub3d **cub, void *texture, char *elem);
+int		ft_check_texture(t_cub3d **cub);
+int		ft_fill_cub_texture(t_cub3d **cub, char **elems);
 int		ft_fill_cub_elems(t_cub3d **cub, char *av);
 
 // ft_initialize_struct.c

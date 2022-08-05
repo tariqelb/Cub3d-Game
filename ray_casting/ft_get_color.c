@@ -65,24 +65,24 @@ int	ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn)
 	if (i == x && j < y)
 	{
 		cub[0]->ray_height[turn][3] = 1;
-		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][1] ) % 50);
+		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][1]) % 50);
 	}
 	else if (i == x && j > y)
 	{
 
 		cub[0]->ray_height[turn][3] = 2;
-		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][1] % 50);
+		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][1]) % 50);
 
 	}
 	else if (j == y && i < x)
 	{
 		cub[0]->ray_height[turn][3] = 3;
-		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][0] % 50);
+		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][0]) % 50);
 	}
 	else if (j == y && i > x)
 	{
 		cub[0]->ray_height[turn][3] = 4,
-		cub[0]->text_x[turn] = ((int)cub[0]->ray_pos[turn][0] % 50);
+		cub[0]->text_x[turn] = ((int)(cub[0]->ray_pos[turn][0]) % 50);
 	}
 	else if (turn > 0)
 	{

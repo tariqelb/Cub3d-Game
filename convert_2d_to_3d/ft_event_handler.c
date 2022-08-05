@@ -46,7 +46,8 @@ int	ft_handle_mouse(int x, int y, void **data)
 	ft_screan_display(cub[0]);
 	ft_mini_map_display(cub);
 	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->img, 0, 0);
-	ft_sprite_but(cub);
+	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->map_img, 0, 0);
+	//ft_sprite_but(cub);
 	return (0);
 }
 
@@ -77,6 +78,7 @@ int	ft_handle_keys(int key, t_cub3d **cub)
 	ft_screan_display(cub[0]);
 	ft_mini_map_display(cub);
 	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->img, 0, 0);
-	ft_sprite_but(cub);
+	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->map_img, 0, 0);
+	//ft_sprite_but(cub);
 	return (0);
 }

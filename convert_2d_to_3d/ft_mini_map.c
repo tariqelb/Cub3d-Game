@@ -35,7 +35,7 @@ int ft_wall_space_player(t_cub3d **cub, int i, int j)
         return (1);
     else if (map[index] == '0')
         return (2);
-    else if (map[index] == 'S' || map[index] == 'E' || map[index] == 'N' || map[index] == 'A')
+    else if (map[index] == 'S' || map[index] == 'E' || map[index] == 'N' || map[index] == 'W')
         return (3);
     return (0);
 }
