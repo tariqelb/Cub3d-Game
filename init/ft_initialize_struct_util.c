@@ -66,9 +66,9 @@ int	ft_check_texture(t_cub3d *cub)
 	cub->img = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
 	cub->addr = mlx_get_data_addr(cub->img, &cub->bpp ,&cub->line_len, &cub->endien);
 	cub->n_txtr.addr = mlx_get_data_addr(cub->n_txtr.txt, &cub->n_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
-	cub->s_txtr.addr = mlx_get_data_addr(cub->s_txtr.txt, &cub->s_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
-	cub->e_txtr.addr = mlx_get_data_addr(cub->e_txtr.txt, &cub->e_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
-	cub->w_txtr.addr = mlx_get_data_addr(cub->w_txtr.txt, &cub->w_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
+	cub->s_txtr.addr = mlx_get_data_addr(cub->s_txtr.txt, &cub->s_txtr.bpp, &cub->s_txtr.line_len, &cub->s_txtr.endien);
+	cub->e_txtr.addr = mlx_get_data_addr(cub->e_txtr.txt, &cub->e_txtr.bpp, &cub->e_txtr.line_len, &cub->e_txtr.endien);
+	cub->w_txtr.addr = mlx_get_data_addr(cub->w_txtr.txt, &cub->w_txtr.bpp, &cub->w_txtr.line_len, &cub->w_txtr.endien);
 	return (0);
 }
 
