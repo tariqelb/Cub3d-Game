@@ -23,32 +23,36 @@
 # include <sys/types.h>
 # include "./get_next_line/get_next_line.h"
 
+typedef struct s_txt
+{
+	char	*txt;
+	char	*addr;
+	int		line_len;
+	int		bpp;
+	int		endien;
+}	t_txt;
 
 typedef struct s_cub3d
 {
 	void	*mlx;
 	void	*win;
-	char	*txt_n;
-	char	*txt_s;
-	char	*txt_w;
-	char	*txt_e;
-	char	*add_n;
-	char	*add_s;
-	char	*add_w;
-	char	*add_e;
-    int		endien;
-    int		line_len;
-    int		bpp;
+	t_txt	n_txtr;	
+	t_txt	s_txtr;	
+	t_txt	e_txtr;	
+	t_txt	w_txtr;
+	int 	endien;
+    int 	line_len;
+    int 	bpp;
 	void	*img;
-	void	*map_img;
 	char	*addr;
+	void	*map_img;
 	char	*map_addr;
-	int		map_w;
-	int		map_h;
     int 	m_endien;
     int 	m_line_len;
     int 	m_bpp;
 	char	**map;
+	int		map_w;
+	int		map_h;
 	int		f;
 	int		c;
 	double	p_pos[2];

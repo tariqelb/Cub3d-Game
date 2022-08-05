@@ -16,7 +16,7 @@ void	my_img_pix_put(t_cub3d **cub, int x, int y, int color)
 {
 	char    *pixel;
 
-    pixel = cub[0]->addr + (y * cub[0]->line_len + x * (cub[0]->bpp / 8));
+    pixel = cub[0]->map_addr + (y * cub[0]->m_line_len + x * (cub[0]->m_bpp / 8));
 	*(unsigned int *)pixel = color;
 }
 

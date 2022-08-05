@@ -6,7 +6,7 @@
 #    By: tel-bouh <tel-bouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/12 10:26:35 by tel-bouh          #+#    #+#              #
-#    Updated: 2022/06/16 14:23:10 by tel-bouh         ###   ########.fr        #
+#    Updated: 2022/08/05 12:44:50 by tel-bouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,9 @@ OBJS = $(SRCS:.c=.o)
 
 FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/X11/lib/ -lmlx -framework OpenGL  -framework AppKit
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
 
-MLX_HEADER = /usr/X11/include
+MLX_HEADER = /usr/local/include
 
 CC = cc
 

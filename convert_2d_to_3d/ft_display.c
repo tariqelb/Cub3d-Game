@@ -24,13 +24,13 @@ void	img_pix_put(t_cub3d *cub, int x, int y, int color)
 int	get_color(t_cub3d *cub, int x, int y, int index)
 {
 	if (cub->ray_height[index][3] == 3)
-		return (*(int *)cub->add_n + (y * cub->line_len + x /*cub->text_x[x]*/ * (cub->bpp / 8)));
+		return (*(int *)cub->n_txtr.addr + (y * cub->n_txtr.line_len + x * (cub->n_txtr.bpp / 8)));
 	else if (cub->ray_height[index][3] == 4)
-		return (*(int *)cub->add_s + (y * cub->line_len + x /*cub->text_x[x]*/ * (cub->bpp / 8)));
+		return (*(int *)cub->s_txtr.addr + (y * cub->s_txtr.line_len + x * (cub->s_txtr.bpp / 8)));
 	else if (cub->ray_height[index][3] == 2)
-		return (*(int *)cub->add_w + (y * cub->line_len + x /*cub->text_x[x]*/ * (cub->bpp / 8)));
+		return (*(int *)cub->w_txtr.addr + (y * cub->w_txtr.line_len + x  * (cub->w_txtr.bpp / 8)));
 	else if (cub->ray_height[index][3] == 1)
-		return (*(int *)cub->add_e + (y * cub->line_len + x /*cub->text_x[x]*/ * (cub->bpp / 8)));
+		return (*(int *)cub->e_txtr.addr + (y * cub->e_txtr.line_len + x  * (cub->e_txtr.bpp / 8)));
 	return (0);
 }
 
@@ -75,18 +75,17 @@ void	ft_screan_display(t_cub3d *cub)
 			else if ((i >= ((HEIGHT / 2) - mid)) && (i <= ((HEIGHT / 2) + mid)))
 			{
 				if (cub->ray_height[index][3] == 1)
-					img_pix_put(&cub[0], j, i,  get_color(cub, v_x /*cub[0].text_x[index]*/, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i,  get_color(cub, (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 2)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*cub[0].text_x[index] */, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 3)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*cub[0].text_x[index] */, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index]  , (i - ((HEIGHT / 2) - mid)) % 50, index));
 				else if (cub->ray_height[index][3] == 4)
-					img_pix_put(&cub[0], j, i, get_color(cub, v_x /*cub[0].text_x[index] */, (i - ((HEIGHT / 2) - mid)) % 50, index));
+					img_pix_put(&cub[0], j, i, get_color(cub, (int)cub->text_x[index] , (i - ((HEIGHT / 2) - mid)) % 50, index));
 			}
 			i++;
 		}
-		//if (j % cub->cmr == 0)
-			index++;
+		index++;
 		j++;
 		v_x++;
 	}

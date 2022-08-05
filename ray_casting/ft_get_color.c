@@ -93,7 +93,7 @@ int	ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn)
 		cub[0]->text_x[turn] = (cub[0]->ray_height[turn][1] % 50),
 		cub[0]->ray_height[turn][3] = ft_chose_color(cub, turn, x, y);
 	if (turn == 1)	
-		cub[0]->ray_height[turn - 1][3] = (cub[0]->ray_height[turn][3] % 50);
+		cub[0]->ray_height[turn - 1][3] = cub[0]->ray_height[turn][3];
 	return (0);
 }
 

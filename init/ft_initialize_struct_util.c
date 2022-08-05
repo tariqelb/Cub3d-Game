@@ -52,6 +52,7 @@ void	*ft_get_texture(t_cub3d *cub, void *texture, char *elem)
 	w = 10;
 	tmp = NULL;
 	tmp = ft_split(elem, ' ');
+	//printf("%s\n", tmp[1]);
 	texture = mlx_xpm_file_to_image(cub->mlx, tmp[1], &h, &w);
 	ft_free_tab(tmp, NULL, NULL);
 	return (texture);
@@ -59,20 +60,15 @@ void	*ft_get_texture(t_cub3d *cub, void *texture, char *elem)
 
 int	ft_check_texture(t_cub3d *cub)
 {	
-	int endian;
-	int	size_line;
-	int	bits_per_pixel;
-
-	if (cub->txt_n == NULL || cub->txt_s == NULL
-			|| cub->txt_w == NULL || cub->txt_e == NULL)
+	if (cub->n_txtr.txt == NULL || cub->s_txtr.txt == NULL
+			|| cub->e_txtr.txt == NULL || cub->w_txtr.txt == NULL)
 		return (1);
-	endian = 0;
-	bits_per_pixel = 2;
-	size_line = 96;
-	cub->add_n = mlx_get_data_addr(cub->txt_n, &bits_per_pixel, &size_line, &endian);
-	cub->add_s = mlx_get_data_addr(cub->txt_s, &bits_per_pixel, &size_line, &endian);
-	cub->add_e = mlx_get_data_addr(cub->txt_e, &bits_per_pixel, &size_line, &endian);
-	cub->add_w = mlx_get_data_addr(cub->txt_w, &bits_per_pixel, &size_line, &endian);
+	cub->img = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
+	cub->addr = mlx_get_data_addr(cub->img, &cub->bpp ,&cub->line_len, &cub->endien);
+	cub->n_txtr.addr = mlx_get_data_addr(cub->n_txtr.txt, &cub->n_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
+	cub->s_txtr.addr = mlx_get_data_addr(cub->s_txtr.txt, &cub->s_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
+	cub->e_txtr.addr = mlx_get_data_addr(cub->e_txtr.txt, &cub->e_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
+	cub->w_txtr.addr = mlx_get_data_addr(cub->w_txtr.txt, &cub->w_txtr.bpp, &cub->n_txtr.line_len, &cub->n_txtr.endien);
 	return (0);
 }
 
@@ -84,13 +80,13 @@ int	ft_fill_cub(t_cub3d *cub, char **elems)
 	while (i < 6)
 	{
 		if (ft_strncmp(elems[i] , "NO ", 3) == 0)
-			cub->txt_n = ft_get_texture(cub, cub->txt_n, elems[i]);
+			cub->n_txtr.txt = ft_get_texture(cub, cub->n_txtr.txt, elems[i]);
 		else if (ft_strncmp(elems[i] , "SO ", 3) == 0)
-			cub->txt_s = ft_get_texture(&cub[0], cub->txt_s, elems[i]);
+			cub->s_txtr.txt = ft_get_texture(&cub[0], cub->s_txtr.txt, elems[i]);
 		else if (ft_strncmp(elems[i] , "WE ", 3) == 0)
-			cub->txt_w = ft_get_texture(&cub[0], cub->txt_w, elems[i]);
+			cub->w_txtr.txt = ft_get_texture(&cub[0], cub->w_txtr.txt, elems[i]);
 		else if (ft_strncmp(elems[i] , "EA ", 3) == 0)
-			cub->txt_e = ft_get_texture(&cub[0], cub->txt_e, elems[i]);
+			cub->e_txtr.txt = ft_get_texture(&cub[0], cub->e_txtr.txt, elems[i]);
 		else if (ft_strncmp(elems[i] , "F ", 2) == 0)
 			cub->f = ft_get_numbers(elems[i]);
 		else if (ft_strncmp(elems[i] , "C ", 2) == 0)
