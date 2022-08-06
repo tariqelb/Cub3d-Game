@@ -26,7 +26,7 @@ int	ft_check_left_side(char **tab, int i, int s1, int s2)
 	if (s1 > s2)
 	{
 		j = ft_range_to_check(s2);
-		while (j < s1)
+		while (j <= s1)
 		{
 			if (tab[i + 1][j] != '1')
 				return (1);
@@ -36,7 +36,7 @@ int	ft_check_left_side(char **tab, int i, int s1, int s2)
 	else if (s1 < s2)
 	{
 		j = ft_range_to_check(s1);
-		while (j < s2)
+		while (j <= s2)
 		{
 			if (tab[i][j] != '1')
 				return (1);
