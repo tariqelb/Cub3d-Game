@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_straight_move_sides.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 23:50:21 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/03 16:10:51 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:08:35 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
+int	ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
 {
-    if (cub->p_ort == 0)
-    {
-        if (ft_check_up_side_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (cub->p_ort == 100)
-    {
-        if (ft_check_right_side_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (cub->p_ort == 200)
-    {
-        if (ft_check_down_side_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (cub->p_ort == 300)
-    {
-        if (ft_check_left_side_and_update(&cub[0], c))
-            return (1);
-    }
-    return (0);
+	if (cub->p_ort == 0)
+	{
+		if (ft_check_up_side_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (cub->p_ort == 100)
+	{
+		if (ft_check_right_side_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (cub->p_ort == 200)
+	{
+		if (ft_check_down_side_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (cub->p_ort == 300)
+	{
+		if (ft_check_left_side_and_update(&cub[0], c))
+			return (1);
+	}
+	return (0);
 }
 
 int	ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle)
@@ -105,5 +105,3 @@ int	ft_check_new_pos_sides(t_cub3d *cub, char c, int sides_angle)
 		return (1);
 	return (0);
 }
-
-

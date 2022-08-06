@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 20:52:23 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/18 11:54:23 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:34:03 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_check_middle_line_util(char *line, int *spc, int *ort, int i)
 			i++;
 		}
 		else if (line[i] == ' ' && i != 0
-				&& (line[i - 1] != '1' || line[i + 1] != '1'))
+			&& (line[i - 1] != '1' || line[i + 1] != '1'))
 			return (1);
 		else
 			i++;
@@ -83,7 +83,7 @@ int	ft_check_first_and_last_line_util(char *line, int i, int *w)
 
 int	ft_check_first_and_last_line(char *line)
 {
-	int len;
+	int	len;
 	int	i;
 	int	w;
 

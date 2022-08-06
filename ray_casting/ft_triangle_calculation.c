@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_triangle_calculation.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 14:38:09 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/17 22:21:49 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:38:15 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 double	ft_calc_hypotenus(double angle, double adj)
 {
-	double hyp;
+	double	hyp;
 
 	if (angle >= 300)
 		angle -= 300;
@@ -28,7 +28,7 @@ double	ft_calc_hypotenus(double angle, double adj)
 
 double	ft_calc_opposite(double angle, double hyp)
 {
-	double opp;
+	double	opp;
 
 	if (angle >= 300)
 		angle -= 300;
@@ -36,13 +36,13 @@ double	ft_calc_opposite(double angle, double hyp)
 		angle -= 200;
 	else if (angle >= 100)
 		angle -= 100;
-	opp = hyp * sin( angle * (3.14159 / 200));
+	opp = hyp * sin(angle * (3.14159 / 200));
 	return (opp);
 }
 
 double	ft_calc_adjacent(double angle, double hyp)
 {
-	double adj;
+	double	adj;
 
 	if (angle >= 300)
 		angle -= 300;
@@ -56,8 +56,8 @@ double	ft_calc_adjacent(double angle, double hyp)
 
 void	ft_real_distance(t_cub3d **cub, int turn, double hyp)
 {
-	double angle;
-	double real_dis;
+	double	angle;
+	double	real_dis;
 
 	if ((double) cub[0]->p_ort > cub[0]->angle)
 		angle = (double) cub[0]->p_ort - cub[0]->angle;

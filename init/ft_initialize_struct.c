@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_initialize_struct.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <tel-bouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 12:34:42 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/18 15:24:27 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:20:45 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_position_in_pixel(t_cub3d **cub, int xyz[3], int x, int max_y)
 {
-	cub[0]->p_pos[0] = (50) * xyz[1] + ((50) / 2); 
+	cub[0]->p_pos[0] = (50) * xyz[1] + ((50) / 2);
 	cub[0]->p_pos[1] = (50) * xyz[0] + ((50) / 2);
 	if (xyz[2] == 'N')
 		cub[0]->p_ort = 0;
@@ -35,8 +35,8 @@ void	ft_position_in_pixel(t_cub3d **cub, int xyz[3], int x, int max_y)
 
 void	ft_get_p_position(t_cub3d **cub)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 	int	max_y;
 	int	xyz[3];
 

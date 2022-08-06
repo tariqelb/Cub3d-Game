@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isnt_a_wall_sides.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:49:24 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/03 19:56:09 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:21:58 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_check_up_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
-	int 	line_i;
+	int		line_i;
 	int		i;
 	char	ch;
 
@@ -38,7 +38,7 @@ int	ft_check_up_and_update(t_cub3d *cub, char c)
 int	ft_check_down_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
-	int 	line_i;
+	int		line_i;
 	int		i;
 	char	ch;
 
@@ -61,7 +61,7 @@ int	ft_check_down_and_update(t_cub3d *cub, char c)
 int	ft_check_left_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
-	int 	line_i;
+	int		line_i;
 	int		i;
 	int		j;
 	char	ch;
@@ -84,7 +84,7 @@ int	ft_check_left_and_update(t_cub3d *cub, char c)
 int	ft_check_right_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
-	int 	line_i;
+	int		line_i;
 	int		i;
 	int		j;
 	char	ch;

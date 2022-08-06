@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:15:01 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/04 13:00:40 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:22:47 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ void	ft_calculate_and_move_to_pos_two(t_cub3d **cub, char c)
 		sides_angle = cub[0]->p_ort - 100;
 	else
 		sides_angle = cub[0]->p_ort + 100;
-	if (sides_angle >= 400 )
+	if (sides_angle >= 400)
 		sides_angle -= 400;
 	else if (sides_angle < 0)
 		sides_angle += 400;
 	if ((sides_angle == 0) || (sides_angle == 100)
-			|| (sides_angle == 200) || (sides_angle == 300)) 
+		|| (sides_angle == 200) || (sides_angle == 300))
 		ft_simple_pos_calc_sides(cub, c, sides_angle);
 	else
 	{
 		adj = ft_calc_opp0_or_adj1(sides_angle, 1);
 		opp = ft_calc_opp0_or_adj1(sides_angle, 0);
 		if (ft_there_is_a_wall_sides(cub, adj, opp, sides_angle))
-				ft_new_position_forward_sides(cub, adj, opp, sides_angle);
+			ft_new_position_forward_sides(cub, adj, opp, sides_angle);
 	}
 }
 
@@ -75,7 +75,7 @@ void	ft_calculate_and_move_to_pos(t_cub3d **cub, char c)
 	if (c == 'l' || c == 'r')
 		ft_calculate_and_move_to_pos_two(cub, c);
 	else if ((cub[0]->p_ort == 0) || (cub[0]->p_ort == 100)
-			|| (cub[0]->p_ort == 200) || (cub[0]->p_ort == 300))
+		|| (cub[0]->p_ort == 200) || (cub[0]->p_ort == 300))
 		ft_simple_pos_calc(cub, c);
 	else
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_there_is_a_wall_sides.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:06:21 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/17 20:58:34 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:31:42 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_move_player_pos_sides(t_cub3d **cub, int i, int j)
 			if (cub[0]->map[x][y] == cub[0]->xyz[2])
 			{
 				cub[0]->map[x][y] = '0';
-				break;
+				break ;
 			}
 			y++;
 		}
@@ -75,7 +75,8 @@ int	ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_an
 		k++;
 	if (cub[0]->map[i][k] == '0' || cub[0]->map[i][k] == cub[0]->xyz[2])
 	{
-		if (ft_corner(&cub[0], cub[0]->p_ort, i, j) == 1 && cub[0]->map[i][k] == '0' )
+		if (ft_corner(&cub[0], cub[0]->p_ort, i, j) == 1
+			&& cub[0]->map[i][k] == '0')
 			return (0);
 		else if (ft_there_is_a_wall_in_my_way(cub, sides_angle, 'r'))
 			return (0);

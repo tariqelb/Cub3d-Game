@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_map.c                                     :+:      :+:    :+:   */
+/*   ft_parse_map_backup.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <tel-bouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:03:15 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/05/16 20:07:58 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:34:26 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_valide_extension(char *av)
 	if (i < 5)
 		return (0);
 	if (av[i] == 0 && av[i - 1] == 'b' && av[i - 2] == 'u'
-			&& av[i - 3] == 'c' && av[i - 4] == '.')
+		&& av[i - 3] == 'c' && av[i - 4] == '.')
 		return (1);
 	return (0);
 }
@@ -74,7 +74,7 @@ char	**ft_fill_elem(char *av, char ***elem)
 	char	*line;
 	int		fd;
 	int		i;
-	
+
 	fd = open(av, O_RDONLY);
 	i = 0;
 	line = get_next_line(fd);

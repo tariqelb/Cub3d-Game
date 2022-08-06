@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_there_is_a_wall.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 15:16:21 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/17 20:58:00 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:33:16 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_virtual_positoin(t_cub3d **cub, double adj, double opp, char c)
 
 void	ft_move_player_pos(t_cub3d **cub, int i, int j)
 {
-	int x;
+	int	x;
 	int	y;
 
 	x = 0;
@@ -76,7 +76,7 @@ void	ft_move_player_pos(t_cub3d **cub, int i, int j)
 			if (cub[0]->map[x][y] == cub[0]->xyz[2])
 			{
 				cub[0]->map[x][y] = '0';
-				break;
+				break ;
 			}
 			y++;
 		}
@@ -100,8 +100,9 @@ int	ft_there_is_a_wall(t_cub3d **cub, double adj, double opp, char c)
 	while (cub[0]->map[i][k] && k < j)
 		k++;
 	if (cub[0]->map[i][k] == '0' || cub[0]->map[i][k] == cub[0]->xyz[2])
-	{  
-		if (ft_corner(&cub[0], cub[0]->p_ort, i, j) == 1 && cub[0]->map[i][k] == '0' )
+	{
+		if (ft_corner(&cub[0], cub[0]->p_ort, i, j) == 1
+			&& cub[0]->map[i][k] == '0')
 			return (0);
 		else if (ft_there_is_a_wall_in_my_way(cub, cub[0]->p_ort, c))
 			return (0);

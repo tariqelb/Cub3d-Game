@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_event_handler.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 15:13:25 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/18 16:36:52 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/05 20:04:01 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_display_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map[i])
@@ -24,10 +24,19 @@ void	ft_display_map(char **map)
 	}
 }
 
+void	ft_help_handling(t_cub3d **cub)
+{
+	ft_ray_casting(&cub[0]);
+	mlx_clear_window(cub[0]->mlx, cub[0]->win);
+	ft_screan_display(cub[0]);
+	ft_mini_map_display(cub);
+	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->img.img, 0, 0);
+	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->map_img, 0, 0);
+}
+
 int	ft_handle_mouse(int x, int y, void **data)
 {
-	t_cub3d **cub;
-
+	t_cub3d	**cub;
 
 	cub = (t_cub3d **) data;
 	if (cub[0]->mouse == 0)
@@ -41,13 +50,7 @@ int	ft_handle_mouse(int x, int y, void **data)
 		cub[0]->p_ort -= 400;
 	else if (cub[0]->p_ort < 0)
 		cub[0]->p_ort += 400;
-	ft_ray_casting(cub);
-	mlx_clear_window(cub[0]->mlx, cub[0]->win);
-	ft_screan_display(cub[0]);
-	ft_mini_map_display(cub);
-	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->img, 0, 0);
-	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->map_img, 0, 0);
-	//ft_sprite_but(cub);
+	ft_help_handling(cub);
 	return (0);
 }
 
@@ -56,7 +59,7 @@ int	ft_handle_keys(int key, t_cub3d **cub)
 	char	c;
 
 	c = 0;
-	if (key == 123 )
+	if (key == 123)
 		c = '<';
 	else if (key == 124)
 		c = '>';
@@ -73,12 +76,6 @@ int	ft_handle_keys(int key, t_cub3d **cub)
 	else
 		return (0);
 	ft_move_player(&cub[0], c);
-	ft_ray_casting(&cub[0]);
-	mlx_clear_window(cub[0]->mlx, cub[0]->win);
-	ft_screan_display(cub[0]);
-	ft_mini_map_display(cub);
-	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->img, 0, 0);
-	mlx_put_image_to_window(cub[0]->mlx, cub[0]->win, cub[0]->map_img, 0, 0);
-	//ft_sprite_but(cub);
+	ft_help_handling(cub);
 	return (0);
 }

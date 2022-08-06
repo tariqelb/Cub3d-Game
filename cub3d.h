@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cum3d.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <tel-bouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:36:39 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/18 16:35:38 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:55:33 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_txt
 	char	*addr;
 	int		line_len;
 	int		bpp;
+	void	*img;
 	int		endien;
 }	t_txt;
 
@@ -40,16 +41,12 @@ typedef struct s_cub3d
 	t_txt	s_txtr;	
 	t_txt	e_txtr;	
 	t_txt	w_txtr;
-	int 	endien;
-    int 	line_len;
-    int 	bpp;
-	void	*img;
-	char	*addr;
+	t_txt	img;
 	void	*map_img;
 	char	*map_addr;
-    int 	m_endien;
-    int 	m_line_len;
-    int 	m_bpp;
+    int		m_endien;
+    int		m_line_len;
+    int		m_bpp;
 	char	**map;
 	int		map_w;
 	int		map_h;
@@ -68,27 +65,26 @@ typedef struct s_cub3d
 	int		mouse;
 	int		number_of_rays;
 	int		cmr;
-	void	*spt1;
-	void	*spt2;
-	void	*spt3;
-	int		shot;
+	int		x;
+	int		y;
+	int		turn;
 	int		text_x[2001];
 }	t_cub3d;
 
 typedef struct s_img
 {
-    void *mlx_ptr;
-    void *mlx_win;
-    void *mlx_img;
-	void *mlx_map;
-    char *addr;
-	char *addr_map;
-	int  map_w;
-	int	 map_h;
+    void	*mlx_ptr;
+    void	*mlx_win;
+    void	*mlx_img;
+	void	*mlx_map;
+    char	*addr;
+	char	*addr_map;
+	int		map_w;
+	int		map_h;
 	t_cub3d	*cub;
 }			t_img;
 
-t_img img;
+t_img	img;
 
 # define HEIGHT	900
 # define WIDTH	1700
@@ -224,8 +220,8 @@ int		ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_a
 
 // ft_there_is_a_wall_in_my_way.c
 int		ft_check_cell_content(t_cub3d **cub);
-void    ft_for_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle);
-void    ft_back_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle);
+void	ft_for_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle);
+void	ft_back_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle);
 int		ft_there_is_a_wall_in_my_way(t_cub3d **cub, int sides_angle, char c);
 
 // ft_corner.c
@@ -244,17 +240,14 @@ void	ft_micro_map_display(t_cub3d **cub);
 
 // ft_event_handler.c
 void	ft_display_map(char **map);
-int		ft_handle_mouse(int x,int y, void **cub);
+int		ft_handle_mouse(int x, int y, void **cub);
 int		ft_handle_keys(int key, t_cub3d **cub);
 
 // ft_display.c
-void	ft_camera(t_cub3d **cub);
 void	ft_screan_display(t_cub3d *cub);
-//void	ft_screan_display_1(t_cub3d *cub);
-
-int		ft_sprite(int key, t_cub3d **cub);
-int		ft_sprite_but(t_cub3d **cub);
-int		ft_sprite_t(int key, t_cub3d **cub);
+int		get_color(t_cub3d *cub, int x, int y, int index);
+void	ft_help_display(int i, int j, t_cub3d *cub, int mid);
+void	img_pix_put(t_cub3d *cub, int x, int y, int color);
 
 // RAY CASTING
 // ft_triangle_calculation.c
@@ -265,16 +258,16 @@ void	ft_real_distance(t_cub3d **cub, int turn, double hyp);
 
 // ft_get_color.c
 int		ft_chose_color_number(double closest[]);
-int		ft_chose_color(t_cub3d **cub, int turn, int x, int y);
-int		ft_previews_cell(t_cub3d **cub, int hyp, int i, int j, int turn);
+int		ft_chose_color(t_cub3d **cub, int turn);
+int		ft_previews_cell(t_cub3d **cub, int hyp, int i, int j);
 void	ft_adjust_clr(t_cub3d **cub, int turn, int i, int j);
 int		ft_clc_hyp(t_cub3d **cub, double opp, double adj, int flag);
 
 // ft_ray_casting.c
-int		ft_is_ray_hit_the_wall(t_cub3d **cub, int hyp, int turn);
+int		ft_is_ray_hit_the_wall(t_cub3d **cub, int hyp);
 void	ft_virtual_pos_of_ray_two(t_cub3d **cub, int turn, double adj);
 void	ft_virtual_pos_of_ray(t_cub3d **cub, int turn, double adj, double opp);
-void	ft_get_length_of_ray(t_cub3d **cub, int turn);
+void	ft_get_length_of_ray(t_cub3d **cub);
 void	ft_ray_casting(t_cub3d **cub);
 
 // cub3d.c

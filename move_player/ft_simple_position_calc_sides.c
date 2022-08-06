@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple_position_calc_sides.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 23:21:57 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/04 14:55:35 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:24:48 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
+int	ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
 {
-    if (sides_angle == 0)
-    {
-        if (ft_check_up_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (sides_angle == 100)
-    {
-        if (ft_check_right_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (sides_angle == 200)
-    {
-        if (ft_check_down_and_update(&cub[0], c))
-            return (1);
-    }
-    else if (sides_angle == 300)
-    {
-        if (ft_check_left_and_update(&cub[0], c))
-            return (1);
-    }
-    return (0);
+	if (sides_angle == 0)
+	{
+		if (ft_check_up_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (sides_angle == 100)
+	{
+		if (ft_check_right_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (sides_angle == 200)
+	{
+		if (ft_check_down_and_update(&cub[0], c))
+			return (1);
+	}
+	else if (sides_angle == 300)
+	{
+		if (ft_check_left_and_update(&cub[0], c))
+			return (1);
+	}
+	return (0);
 }
 
 int	ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle)

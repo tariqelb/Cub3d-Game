@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_corner.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:27:28 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/18 11:51:28 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:21:30 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_left_under(t_cub3d **cub, int i, int j)
 {
-	int l;
-	int w;
+	int	l;
+	int	w;
 
 	w = 0;
 	l = 0;
@@ -35,8 +35,8 @@ int	ft_left_under(t_cub3d **cub, int i, int j)
 
 int	ft_left_above(t_cub3d **cub, int i, int j)
 {
-	int l;
-	int w;
+	int	l;
+	int	w;
 
 	w = 0;
 	l = 0;
@@ -56,8 +56,8 @@ int	ft_left_above(t_cub3d **cub, int i, int j)
 
 int	ft_right_above(t_cub3d **cub, int i, int j)
 {
-	int l;
-	int w;
+	int	l;
+	int	w;
 
 	w = 0;
 	l = 0;
@@ -77,8 +77,8 @@ int	ft_right_above(t_cub3d **cub, int i, int j)
 
 int	ft_right_under(t_cub3d **cub, int i, int j)
 {
-	int l;
-	int w;
+	int	l;
+	int	w;
 
 	w = 0;
 	l = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_there_is_a_wall_in_my_way.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:50:54 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/04 13:00:58 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:11:15 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void    ft_for_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
 
 void    ft_back_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
 {
-	if (sides_angle > 0 && sides_angle < 100)
+    if (sides_angle > 0 && sides_angle < 100)
     {
         cub[0]->vir_pos[1] = cub[0]->p_pos[1] + adj;
         cub[0]->vir_pos[0] = cub[0]->p_pos[0] - opp;

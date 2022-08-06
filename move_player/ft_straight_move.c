@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_straight_move.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:11:44 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/06/03 00:14:52 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/06 09:27:05 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,7 @@ int	ft_check_new_pos_forward(t_cub3d *cub, char c)
 	else if (cub->p_ort == 0 && next_pos > h_range_min)
 		return (1);
 	else if (cub->p_ort == 200 && next_pos < h_range_max)
-	{
 		return (1);
-	}
 	else if (ft_isnt_a_wall(cub, c))
 		return (1);
 	return (0);

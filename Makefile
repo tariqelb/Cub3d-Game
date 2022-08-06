@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-bouh <tel-bouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/12 10:26:35 by tel-bouh          #+#    #+#              #
-#    Updated: 2022/08/05 12:44:50 by tel-bouh         ###   ########.fr        #
+#    Updated: 2022/08/05 19:50:23 by zezzine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,16 +25,15 @@ SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse
 	   ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c \
 	   ./move_player/ft_there_is_a_wall_in_my_way.c \
 	   ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c \
-	   ./convert_2d_to_3d/ft_sprite.c
 
 
 OBJS = $(SRCS:.c=.o)
 
 FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
+MLX_FLAGS = -L /usr/X11/lib/ -lmlx -framework OpenGL  -framework AppKit
 
-MLX_HEADER = /usr/local/include
+MLX_HEADER = /usr/X11/include
 
 CC = cc
 
