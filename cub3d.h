@@ -143,6 +143,8 @@ char	*ft_strdup_case(const char *src);
 char	**ft_free_tab(char **str, char *arg1, char *arg2);
 char	**ft_split(char const *str, char c);
 int		ft_atoi(const char *ndr);
+int		ft_odd_quote(const char *s, int index);
+char	**ft_split_case(char const *s, char c);
 //init dir
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 

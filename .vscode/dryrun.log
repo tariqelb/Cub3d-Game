@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/tel-bouh/Desktop/cub3d_v7'
+make: `all' is up to date.
+make: Leaving directory `/Users/tel-bouh/Desktop/cub3d_v7'
+ 

@@ -27,12 +27,38 @@ int	ft_is_a_file(char *line)
 	return (0);
 }
 
+int	ft_is_two_elems(char *elem)
+{
+	int 	i;
+	int		j;
+	char	**tab;
+
+	tab = ft_split_case(elem, ' ');
+	i = 0;
+	if (tab == NULL)
+		return (1);
+	while (tab[i] != NULL)
+		i++;
+	j = 0;
+	if (i != 2)
+	{
+		while (j < i)
+		{
+			free(tab[j]);
+			j++;
+		}
+		free(tab);
+		return (1);
+	}
+	return (0);
+}
+
 int	ft_check_line(char *line, char *elem, int len)
 {
 	char	**tab;
 	int		i;
 
-	tab = ft_split(line, ' ');
+	tab = ft_split_case(line, ' ');
 	if (ft_strcmp(tab[0], elem) == 0)
 	{
 		i = ft_strlen(tab[1]);
@@ -106,6 +132,8 @@ int	ft_check_elems(char	**elem_tab)
 	i = 0;
 	while (elem_tab[i] && i < 6)
 	{
+		if (ft_is_two_elems(elem_tab[i]) == 1)
+			return (1);
 		ft_check_elem_identifers(&elem, elem_tab, i);
 		i++;
 	}
