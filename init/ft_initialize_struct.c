@@ -31,6 +31,8 @@ void	ft_position_in_pixel(t_cub3d **cub, int xyz[3], int x, int max_y)
 	cub[0]->xyz[2] = xyz[2];
 	cub[0]->cell_w_h[0] = 50;
 	cub[0]->cell_w_h[1] = 50;
+	cub[0]->vertical = 0;
+
 }
 
 void	ft_get_p_position(t_cub3d **cub)

@@ -67,15 +67,19 @@ int	ft_handle_keys(int key, t_cub3d **cub)
 		c = 'l';
 	else if (key == 2)
 		c = 'r';
-	else if (key == 125 || key == 1)
+	else if (/*key == 125 ||*/ key == 1)
 		c = 'd';
-	else if (key == 126 || key == 13)
+	else if (/*key == 126 || */key == 13)
 		c = 'u';
 	else if (key == 53)
 		ft_close_win(cub);
+	else if (key == 126)
+		cub[0]->vertical += 10;
+	else if (key == 125)
+		cub[0]->vertical -= 10;
 	else
 		return (0);
 	ft_move_player(&cub[0], c);
-	ft_help_handling(cub);
+	ft_help_handling(&cub[0]);
 	return (0);
 }

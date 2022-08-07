@@ -67,6 +67,7 @@ typedef struct s_cub3d
 	int		cmr;
 	int		x;
 	int		y;
+	int		vertical;
 	int		turn;
 	int		text_x[2001];
 }	t_cub3d;

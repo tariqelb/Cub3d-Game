@@ -12,6 +12,14 @@
 
 #include "../cub3d.h"
 
+void	my_img_pix_put(t_cub3d **cub, int x, int y, int color)
+{
+	char    *pixel;
+
+    pixel = cub[0]->map_addr + (y * cub[0]->m_line_len + x * (cub[0]->m_bpp / 8));
+	*(unsigned int *)pixel = color;
+}
+
 int	ft_wall_space_player(t_cub3d **cub, int i, int j)
 {
 	char	*map;
@@ -47,11 +55,11 @@ void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j)
 		{
 			color = ft_wall_space_player(cub, index_i, index_j);
 			if (color == 1)
-				img_pix_put(cub[0], j, i, 1616800);
+				my_img_pix_put(&cub[0], j, i, 1616800);
 			if (color == 2)
-				img_pix_put(cub[0], j, i, 12799680);
+				my_img_pix_put(&cub[0], j, i, 12799680);
 			if (color == 3)
-				img_pix_put(cub[0], j, i, 1927699);
+				my_img_pix_put(&cub[0], j, i, 1927699);
 		}
 		j++;
 		if (j % 21 == 0)
@@ -65,7 +73,6 @@ void	ft_micro_map_display(t_cub3d **cub)
 	int	index_i;
 	int	index_j;
 
-	printf("micro\n");
 	cub[0]->map_w = (20 * 3) + 4;
 	cub[0]->map_h = (20 * 4) + 5;
 	cub[0]->map_img = mlx_new_image(cub[0]->mlx, cub[0]->map_w, cub[0]->map_h);
@@ -99,10 +106,8 @@ void	ft_mini_map_display(t_cub3d **cub)
 	{
 		cub[0]->map_w = (cub[0]->xyz[1] * 6) + (cub[0]->xyz[1] + 1);
 		cub[0]->map_h = (cub[0]->xyz[0] * 6) + (cub[0]->xyz[0] + 1);
-		cub[0]->map_img = mlx_new_image(cub[0]->mlx,
-				cub[0]->map_w, cub[0]->map_h);
-		cub[0]->map_addr = mlx_get_data_addr(cub[0]->map_img,
-				&cub[0]->m_bpp, &cub[0]->m_line_len, &cub[0]->m_endien);
+		cub[0]->map_img = mlx_new_image(cub[0]->mlx, cub[0]->map_w, cub[0]->map_h);
+		cub[0]->map_addr = mlx_get_data_addr(cub[0]->map_img, &cub[0]->m_bpp, &cub[0]->m_line_len, &cub[0]->m_endien);
 		i = 0;
 		index_i = 0;
 		while (i < cub[0]->map_h)
@@ -113,11 +118,11 @@ void	ft_mini_map_display(t_cub3d **cub)
 			{
 				color = ft_wall_space_player(cub, index_i, index_j);
 				if (color == 1)
-					img_pix_put(cub[0], j, i, 1616800);
+					my_img_pix_put(&cub[0], j, i, 1616800);
 				if (color == 2)
-					img_pix_put(cub[0], j, i, 12799680);
+					my_img_pix_put(&cub[0], j, i, 12799680);
 				if (color == 3)
-					img_pix_put(cub[0], j, i, 1927699);
+					my_img_pix_put(&cub[0], j, i, 1927699);
 				j++;
 				if (j % 7 == 0)
 					index_j++;

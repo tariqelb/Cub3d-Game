@@ -42,7 +42,7 @@ void	ft_help_display(int i, int j, t_cub3d *cub, int mid)
 	int		color;
 	double	middle;
 
-	middle = (double)(i - ((HEIGHT / 2) - mid));
+	middle = (double)((i - cub->vertical) - ((HEIGHT / 2) - mid));
 	color = get_color(cub, cub->text_x[j],
 			(int)((double)(50.0 * middle / cub->ray_height[j][2])) % 50, j);
 	if (cub->ray_height[j][3] == 1)
@@ -60,21 +60,23 @@ void	ft_screan_display(t_cub3d *cub)
 	int	i;
 	int	j;
 	int	mid;
-
+	int v =  cub->vertical;
 	i = -1;
 	j = -1;
 	while (++j < WIDTH - 1)
 	{
 		i = 0;
-		mid = cub->ray_height[j][2] / 2;
-		while (++i < HEIGHT)
+		mid = (cub->ray_height[j][2] / 2);
+		while (++i < HEIGHT )
 		{
-			if (i < ((HEIGHT / 2) - mid))
+			if (i - v < (((HEIGHT / 2) - mid)))
 				img_pix_put(&cub[0], j, i, 0);
-			else if (i > ((HEIGHT / 2) + mid))
+			else if (i - v > (((HEIGHT / 2) + mid)))
 				img_pix_put(&cub[0], j, i, 16777215);
-			else if ((i >= ((HEIGHT / 2) - mid)) && (i <= ((HEIGHT / 2) + mid)))
-				ft_help_display(i, j, cub, mid);
+			else if ((i - v >= (((HEIGHT / 2)  - mid))) && (i - v <= (((HEIGHT / 2)))))
+				ft_help_display(i, j  , cub, mid);
+			else if ((i - v >= (((HEIGHT / 2)))) && (i - v <= (((HEIGHT / 2) + mid))))
+				ft_help_display(i, j , cub, mid);
 		}
 	}
 }
