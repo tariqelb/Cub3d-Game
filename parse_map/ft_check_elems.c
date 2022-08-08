@@ -107,17 +107,17 @@ int	ft_check_elems(char	**elem_tab)
 	while (elem_tab[i] && i < 6)
 	{
 		if (ft_is_two_elems(elem_tab[i]) == 1)
+		{
+			free(elem);
 			return (1);
+		}
 		ft_check_elem_identifers(&elem, elem_tab, i);
 		i++;
 	}
-	i = 0;
+	i = -1;
 	sum = 0;
-	while (i < 6)
-	{
+	while (++i < 6)
 		sum += elem[i];
-		i++;
-	}
 	free(elem);
 	return (sum);
 }

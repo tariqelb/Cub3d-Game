@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:50:54 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 14:11:15 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:28:20 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,52 +28,52 @@ int	ft_check_cell_content(t_cub3d **cub)
 	return (0);
 }
 
-void    ft_for_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
+void	ft_for_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
 {
-    if (sides_angle > 0 && sides_angle < 100)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] - adj;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] + opp;
-    }
-    if (sides_angle > 100 && sides_angle < 200)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] + opp;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] + adj;
-    }
-    if (sides_angle > 200 && sides_angle < 300)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] + adj;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] - opp;
-    }
-    if (sides_angle > 300 && sides_angle < 400)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] - opp;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] - adj;
-    }
+	if (sides_angle > 0 && sides_angle < 100)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] - adj;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] + opp;
+	}
+	if (sides_angle > 100 && sides_angle < 200)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] + opp;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] + adj;
+	}
+	if (sides_angle > 200 && sides_angle < 300)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] + adj;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] - opp;
+	}
+	if (sides_angle > 300 && sides_angle < 400)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] - opp;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] - adj;
+	}
 }
 
-void    ft_back_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
+void	ft_back_vir_pos(t_cub3d **cub, double adj, double opp, int sides_angle)
 {
-    if (sides_angle > 0 && sides_angle < 100)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] + adj;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] - opp;
-    }
-    else if (sides_angle > 100 && sides_angle < 200)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] - opp;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] - adj;
-    }
-    else if (sides_angle > 200 && sides_angle < 300)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] - adj;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] + opp;
-    }
-    else if (sides_angle > 300 && sides_angle < 400)
-    {
-        cub[0]->vir_pos[1] = cub[0]->p_pos[1] + opp;
-        cub[0]->vir_pos[0] = cub[0]->p_pos[0] + adj;
-    }
+	if (sides_angle > 0 && sides_angle < 100)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] + adj;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] - opp;
+	}
+	else if (sides_angle > 100 && sides_angle < 200)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] - opp;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] - adj;
+	}
+	else if (sides_angle > 200 && sides_angle < 300)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] - adj;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] + opp;
+	}
+	else if (sides_angle > 300 && sides_angle < 400)
+	{
+		cub[0]->vir_pos[1] = cub[0]->p_pos[1] + opp;
+		cub[0]->vir_pos[0] = cub[0]->p_pos[0] + adj;
+	}
 }
 
 int	ft_there_is_a_wall_in_my_way(t_cub3d **cub, int sides_angle, char c)

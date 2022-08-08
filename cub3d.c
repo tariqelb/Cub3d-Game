@@ -16,16 +16,14 @@ int	ft_close_win(t_cub3d **cub)
 {
 	ft_free_tab(cub[0]->map, NULL, NULL);
 	free(cub[0]);
-	//mlx_clear_window(cub[0]->mlx, cub[0]->win); leaks
-	//mlx_destroy_window(cub[0]->mlx, cub[0]->win);
+	mlx_clear_window(cub[0]->mlx, cub[0]->win);
+	mlx_destroy_window(cub[0]->mlx, cub[0]->win);
 	exit(0);
 	return (0);
 }
 
 void	ft_cub3d(t_cub3d *cub)
 {
-	img.mlx_ptr = cub->mlx;
-	img.mlx_win = cub->win;
 	ft_handle_keys(123, &cub);
 	mlx_hook(cub->win, 17, 0, ft_close_win, &cub);
 	mlx_hook(cub->win, 2, 0, ft_handle_keys, &cub);

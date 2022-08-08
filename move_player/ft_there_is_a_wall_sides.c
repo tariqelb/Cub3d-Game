@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:06:21 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:31:42 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:34:37 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_vir_pos_sides(t_cub3d **cub, double adj, double opp, int sides_angle)
 
 void	ft_move_player_pos_sides(t_cub3d **cub, int i, int j)
 {
-	int x;
+	int	x;
 	int	y;
 
 	x = 0;
@@ -61,13 +61,13 @@ void	ft_move_player_pos_sides(t_cub3d **cub, int i, int j)
 	cub[0]->p_j = j;
 }
 
-int	ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_angle)
+int	ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int s)
 {
 	int	i;
 	int	j;
 	int	k;
 
-	ft_vir_pos_sides(cub, adj, opp, sides_angle);
+	ft_vir_pos_sides(cub, adj, opp, s);
 	j = cub[0]->vir_pos[0] / cub[0]->cell_w_h[0];
 	i = cub[0]->vir_pos[1] / cub[0]->cell_w_h[1];
 	k = 0;
@@ -78,7 +78,7 @@ int	ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_an
 		if (ft_corner(&cub[0], cub[0]->p_ort, i, j) == 1
 			&& cub[0]->map[i][k] == '0')
 			return (0);
-		else if (ft_there_is_a_wall_in_my_way(cub, sides_angle, 'r'))
+		else if (ft_there_is_a_wall_in_my_way(cub, s, 'r'))
 			return (0);
 		else
 		{
@@ -89,3 +89,5 @@ int	ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_an
 	}
 	return (0);
 }
+
+//s = side_angle.

@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:36:39 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:55:33 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:42:56 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ typedef struct s_cub3d
 	t_txt	img;
 	void	*map_img;
 	char	*map_addr;
-    int		m_endien;
-    int		m_line_len;
-    int		m_bpp;
+	int		m_endien;
+	int		m_line_len;
+	int		m_bpp;
 	char	**map;
 	int		map_w;
 	int		map_h;
@@ -73,21 +73,6 @@ typedef struct s_cub3d
 	int		opp;
 	int		text_x[2001];
 }	t_cub3d;
-
-typedef struct s_img
-{
-    void	*mlx_ptr;
-    void	*mlx_win;
-    void	*mlx_img;
-	void	*mlx_map;
-    char	*addr;
-	char	*addr_map;
-	int		map_w;
-	int		map_h;
-	t_cub3d	*cub;
-}			t_img;
-
-t_img	img;
 
 # define HEIGHT	900
 # define WIDTH	1700
@@ -201,13 +186,13 @@ void	ft_simple_pos_calc(t_cub3d **cub, char c);
 void	ft_simple_pos_calc_backward(t_cub3d **cub, char c);
 
 // ft_isnt_a_wall_sides.c
-int		ft_check_up_and_update(t_cub3d *cub, char c);
-int		ft_check_down_and_update(t_cub3d *cub, char c);
-int		ft_check_left_and_update(t_cub3d *cub, char c);
-int		ft_check_right_and_update(t_cub3d *cub, char c);
+int		ft_check_up_and_update(t_cub3d *cub);
+int		ft_check_down_and_update(t_cub3d *cub);
+int		ft_check_left_and_update(t_cub3d *cub);
+int		ft_check_right_and_update(t_cub3d *cub);
 
 // ft_simple_position_calc_sides.c
-int		ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle);
+int		ft_isnt_a_wall_sides(t_cub3d *cub, int sides_angle);
 int		ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle);
 int		ft_check_new_pos_right(t_cub3d *cub, char c, int sides_angle);
 int		ft_check_new_pos_sides(t_cub3d *cub, char c, int sides_angle);
@@ -219,10 +204,10 @@ void	ft_n_pos_f_side(t_cub3d **cub, double adj, double opp, int sides_angle);
 void	ft_n_pos_b_side(t_cub3d **cub, double adj, double opp, int sides_angle);
 
 // ft_there_is_a_wall_sides.c
-void	ft_vir_pos_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
-void	ft_virtual_position_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
+void	ft_vir_pos_sides(t_cub3d **cub, double adj, double opp, int s);
+void	ft_virtual_position_sides(t_cub3d **cub, double adj, double opp, int s);
 void	ft_move_player_pos_sides(t_cub3d **cub, int i, int j);
-int		ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
+int		ft_there_is_a_wall_sides(t_cub3d **cub, double adj, double opp, int s);
 
 // ft_there_is_a_wall_in_my_way.c
 int		ft_check_cell_content(t_cub3d **cub);

@@ -30,6 +30,7 @@ char	**ft_fill_elem(char *av, char ***elem)
 			elem[0][i] = NULL;
 			ft_free_tab(elem[0], line, NULL);
 			close(fd);
+			free(line);
 			ft_error(7);
 			return (NULL);
 		}
@@ -98,6 +99,7 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 		return (0);
 	}
 	v_elem += ft_check_map_again(&elem_tab[6], 0, 0);
+	ft_free_tab(elem_tab, NULL, NULL);
 	return (v_elem);
 }
 

@@ -12,6 +12,19 @@
 
 #include "../cub3d.h"
 
+int	ft_arrow(t_cub3d **cub)
+{
+	if (cub[0]->p_ort > 350 || cub[0]->p_ort <= 50)
+		return (33335555);
+	else if (cub[0]->p_ort > 50 && cub[0]->p_ort <= 150)
+		return (99999999);
+	else if (cub[0]->p_ort > 150 && cub[0]->p_ort <= 250)
+		return (66678787);
+	else if (cub[0]->p_ort > 250 && cub[0]->p_ort <= 350)
+		return (11111111);
+	return (0);
+}
+
 void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j)
 {
 	int	j;
@@ -30,7 +43,9 @@ void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j)
 			if (color == 2)
 				my_img_pix_put(&cub[0], j, i, 12799680);
 			if (color == 3)
-				my_img_pix_put(&cub[0], j, i, 1927699);
+			{
+				my_img_pix_put(&cub[0], j, i, ft_arrow(cub));
+			}
 		}
 		j++;
 		if (j % 21 == 0)

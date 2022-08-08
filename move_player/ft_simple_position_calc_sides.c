@@ -12,26 +12,26 @@
 
 #include "../cub3d.h"
 
-int	ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
+int	ft_isnt_a_wall_sides(t_cub3d *cub, int sides_angle)
 {
 	if (sides_angle == 0)
 	{
-		if (ft_check_up_and_update(&cub[0], c))
+		if (ft_check_up_and_update(&cub[0]))
 			return (1);
 	}
 	else if (sides_angle == 100)
 	{
-		if (ft_check_right_and_update(&cub[0], c))
+		if (ft_check_right_and_update(&cub[0]))
 			return (1);
 	}
 	else if (sides_angle == 200)
 	{
-		if (ft_check_down_and_update(&cub[0], c))
+		if (ft_check_down_and_update(&cub[0]))
 			return (1);
 	}
 	else if (sides_angle == 300)
 	{
-		if (ft_check_left_and_update(&cub[0], c))
+		if (ft_check_left_and_update(&cub[0]))
 			return (1);
 	}
 	return (0);
@@ -39,6 +39,7 @@ int	ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
 
 int	ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle)
 {
+	(void)c;
 	if (sides_angle == 0)
 		return (cub->p_pos[1] - STEP);
 	else if (sides_angle == 100)
@@ -73,13 +74,14 @@ int	ft_check_new_pos_sides(t_cub3d *cub, char c, int sides_angle)
 		return (1);
 	else if (sides_angle == 200 && next_pos < h_range_max)
 		return (1);
-	else if (ft_isnt_a_wall_sides(cub, c, sides_angle))
+	else if (ft_isnt_a_wall_sides(cub, sides_angle))
 		return (1);
 	return (0);
 }
 
 void	ft_simple_pos_calc_sides(t_cub3d **cub, char c, int sides_angle)
 {
+	(void)c;
 	if (ft_check_new_pos_sides(cub[0], c, sides_angle))
 	{
 		if (sides_angle == 0)

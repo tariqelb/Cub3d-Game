@@ -29,12 +29,13 @@ int	ft_is_two_elems(char *elem)
 	{
 		while (j < i)
 		{
-			free(tab[j]);
+			free(tab);
 			j++;
 		}
 		free(tab);
 		return (1);
 	}
+	ft_free_tab(tab, NULL, NULL);
 	return (0);
 }
 

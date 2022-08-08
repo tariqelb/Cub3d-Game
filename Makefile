@@ -6,7 +6,7 @@
 #    By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/12 10:26:35 by tel-bouh          #+#    #+#              #
-#    Updated: 2022/08/07 13:41:56 by tel-bouh         ###   ########.fr        #
+#    Updated: 2022/08/08 16:29:38 by zezzine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,21 +29,18 @@ SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse
 
 OBJS = $(SRCS:.c=.o)
 
-FLAGS = #-Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
 
-MLX_HEADER = /usr/local/include #if you get error if mlx.h chagne X11 with local
+MLX_HEADER = /usr/local/include
 
 CC = cc
 
 all : $(NAME)
 	
-$(NAME) :
+$(NAME) : $(OBJS)
 	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
-
-#.c:.o :
-#	$(CC) -c $(FLAGS) $< -o $@
 
 clean :
 	rm -rf $(OBJS)
