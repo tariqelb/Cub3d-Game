@@ -31,7 +31,7 @@ char	**ft_fill_elem(char *av, char ***elem)
 			ft_free_tab(elem[0], line, NULL);
 			close(fd);
 			ft_error(7);
-			return (NULL); 
+			return (NULL);
 		}
 		free(line);
 		line = get_next_line(fd);
@@ -89,7 +89,7 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 	if (v_elem != 6 || len < 9)
 	{
 		elem_tab = ft_free_tab(elem_tab, NULL, NULL);
-		return (ft_error(4) - 1);	
+		return (ft_error(4) - 1);
 	}
 	v_elem += ft_check_map(&elem_tab[6], len - 6);
 	if (v_elem != 6)

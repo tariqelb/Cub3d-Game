@@ -14,9 +14,10 @@
 
 void	my_img_pix_put(t_cub3d **cub, int x, int y, int color)
 {
-	char    *pixel;
+	char	*pixel;
 
-    pixel = cub[0]->map_addr + (y * cub[0]->m_line_len + x * (cub[0]->m_bpp / 8));
+	pixel = cub[0]->map_addr
+		+ (y * cub[0]->m_line_len + x * (cub[0]->m_bpp / 8));
 	*(unsigned int *)pixel = color;
 }
 
@@ -41,64 +42,39 @@ int	ft_wall_space_player(t_cub3d **cub, int i, int j)
 	return (0);
 }
 
-void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j)
+void	ft_display_mini_map_util(t_cub3d **cub, int index_i, int index_j)
 {
-	int	j;
 	int	color;
 
-	j = 0;
-	while (j < cub[0]->map_w)
+	while (cub[0]->x < cub[0]->map_h)
 	{
-		if (i % 21 == 0 || j % 21 == 0)
-			img_pix_put(cub[0], j, i, 16711680);
-		else
+		cub[0]->y = 0;
+		index_j = 0;
+		while (cub[0]->y < cub[0]->map_w)
 		{
 			color = ft_wall_space_player(cub, index_i, index_j);
 			if (color == 1)
-				my_img_pix_put(&cub[0], j, i, 1616800);
+				my_img_pix_put(&cub[0], cub[0]->y, cub[0]->x, 1616800);
 			if (color == 2)
-				my_img_pix_put(&cub[0], j, i, 12799680);
+				my_img_pix_put(&cub[0], cub[0]->y, cub[0]->x, 12799680);
 			if (color == 3)
-				my_img_pix_put(&cub[0], j, i, 1927699);
+				my_img_pix_put(&cub[0], cub[0]->y, cub[0]->x, 1927699);
+			if (color == 4)
+				my_img_pix_put(&cub[0], cub[0]->y, cub[0]->x, 0000000);
+			cub[0]->y++;
+			if (cub[0]->y % 7 == 0)
+				index_j++;
 		}
-		j++;
-		if (j % 21 == 0)
-			index_j++;
-	}
-}
-
-void	ft_micro_map_display(t_cub3d **cub)
-{
-	int	i;
-	int	index_i;
-	int	index_j;
-
-	cub[0]->map_w = (20 * 3) + 4;
-	cub[0]->map_h = (20 * 4) + 5;
-	cub[0]->map_img = mlx_new_image(cub[0]->mlx, cub[0]->map_w, cub[0]->map_h);
-	cub[0]->map_addr = mlx_get_data_addr(cub[0]->map_img,
-			&cub[0]->m_bpp, &cub[0]->m_line_len, &cub[0]->m_endien);
-	i = 0;
-	index_i = cub[0]->p_i - 2;
-	if (index_i < 0)
-		index_i = 0;
-	while (i < cub[0]->map_h)
-	{
-		index_j = cub[0]->p_j - 1;
-		ft_help_micro_map(cub, i, index_i, index_j);
-		i++;
-		if (i % 21 == 0)
+		cub[0]->x++;
+		if (cub[0]->x % 7 == 0)
 			index_i++;
 	}
 }
 
 void	ft_mini_map_display(t_cub3d **cub)
 {
-	int	i;
-	int	j;
 	int	index_i;
 	int	index_j;
-	int	color;
 
 	if (cub[0]->xyz[0] > 40 || cub[0]->xyz[1] > 60)
 		ft_micro_map_display(cub);
@@ -106,30 +82,12 @@ void	ft_mini_map_display(t_cub3d **cub)
 	{
 		cub[0]->map_w = (cub[0]->xyz[1] * 6) + (cub[0]->xyz[1] + 1);
 		cub[0]->map_h = (cub[0]->xyz[0] * 6) + (cub[0]->xyz[0] + 1);
-		cub[0]->map_img = mlx_new_image(cub[0]->mlx, cub[0]->map_w, cub[0]->map_h);
-		cub[0]->map_addr = mlx_get_data_addr(cub[0]->map_img, &cub[0]->m_bpp, &cub[0]->m_line_len, &cub[0]->m_endien);
-		i = 0;
+		cub[0]->map_img = mlx_new_image(cub[0]->mlx,
+				cub[0]->map_w, cub[0]->map_h);
+		cub[0]->map_addr = mlx_get_data_addr(cub[0]->map_img,
+				&cub[0]->m_bpp, &cub[0]->m_line_len, &cub[0]->m_endien);
+		cub[0]->x = 0;
 		index_i = 0;
-		while (i < cub[0]->map_h)
-		{
-			j = 0;
-			index_j = 0;
-			while (j < cub[0]->map_w)
-			{
-				color = ft_wall_space_player(cub, index_i, index_j);
-				if (color == 1)
-					my_img_pix_put(&cub[0], j, i, 1616800);
-				if (color == 2)
-					my_img_pix_put(&cub[0], j, i, 12799680);
-				if (color == 3)
-					my_img_pix_put(&cub[0], j, i, 1927699);
-				j++;
-				if (j % 7 == 0)
-					index_j++;
-			}
-			i++;
-			if (i % 7 == 0)
-				index_i++;
-		}
+		ft_display_mini_map_util(cub, index_i, index_j);
 	}
 }

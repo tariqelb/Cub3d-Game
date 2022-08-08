@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-void	ft_new_position_forward_sides(t_cub3d **cub, double adj, double opp, int sides_angle)
+void	ft_n_pos_f_side(t_cub3d **cub, double adj, double opp, int sides_angle)
 {
 	if (sides_angle > 0 && sides_angle < 100)
 	{
@@ -36,7 +36,7 @@ void	ft_new_position_forward_sides(t_cub3d **cub, double adj, double opp, int si
 	}
 }
 
-void	ft_new_position_backward_sides(t_cub3d **cub, double adj, double opp, int sides_angle)
+void	ft_n_pos_b_side(t_cub3d **cub, double adj, double opp, int sides_angle)
 {
 	if (sides_angle > 0 && cub[0]->p_ort < 100)
 	{

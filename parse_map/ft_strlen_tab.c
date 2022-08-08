@@ -14,7 +14,7 @@
 
 int	ft_strlen_tab(char **str)
 {
-	int i;
+	int	i;
 
 	if (str == NULL)
 		return (0);

@@ -8,10 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Aug  6 20:34:22 2022
+# Make data base, printed on Mon Aug  8 16:03:46 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -23,7 +24,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/tel-bouh/Desktop/cub3d_v7
+CURDIR := /Users/tel-bouh/Desktop/cub3d_v8
 # makefile
 SHELL = /bin/sh
 # environment
@@ -37,7 +38,7 @@ OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.OZRjZMGxA5/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.8lqSlp7ccF/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -47,11 +48,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ldNgjnRRy0/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4hNvtMM7ro/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/tel-bouh/Desktop/cub3d_v7
+PWD = /Users/tel-bouh/Desktop/cub3d_v8
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -79,7 +80,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 15)
-SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse_map/ft_check_elems_util.c ./parse_map/ft_check_map.c ./parse_map/ft_check_map_again.c ./parse_map/ft_check_map_again_util.c ./parse_map/ft_check_map_util.c ./parse_map/ft_split.c ./parse_map/ft_strdup.c ./parse_map/ft_strcmp.c ./parse_map/ft_strlen_tab.c ./parse_map/ft_free.c ./parse_map/ft_atoi.c ./parse_map/ft_split_quote.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./init/ft_initialize_struct.c ./init/ft_initialize_struct_util.c ./init/ft_strncmp.c ./convert_2d_to_3d/ft_display.c ./convert_2d_to_3d/ft_event_handler.c ./convert_2d_to_3d/ft_mini_map.c ./move_player/ft_isnt_a_wall.c ./move_player/ft_there_is_a_wall.c ./move_player/ft_new_position_calc.c ./move_player/ft_straight_move.c  ./move_player/ft_move_player.c ./move_player/ft_simple_position_calc.c ./move_player/ft_corner.c ./move_player/ft_new_position_calc_sides.c ./move_player/ft_there_is_a_wall_sides.c ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c ./move_player/ft_there_is_a_wall_in_my_way.c ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c 
+SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse_map/ft_check_elems_util.c ./parse_map/ft_check_map.c ./parse_map/ft_check_map_again.c ./parse_map/ft_check_map_again_util.c ./parse_map/ft_check_map_util.c ./parse_map/ft_split.c ./parse_map/ft_strdup.c ./parse_map/ft_strcmp.c ./parse_map/ft_strlen_tab.c ./parse_map/ft_free.c ./parse_map/ft_atoi.c ./parse_map/ft_split_quote.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./init/ft_initialize_struct.c ./init/ft_initialize_struct_util.c ./init/ft_strncmp.c ./convert_2d_to_3d/ft_display.c ./convert_2d_to_3d/ft_event_handler.c ./convert_2d_to_3d/ft_mini_map.c  ./convert_2d_to_3d/ft_micro_map.c ./move_player/ft_isnt_a_wall.c ./move_player/ft_there_is_a_wall.c ./move_player/ft_new_position_calc.c ./move_player/ft_straight_move.c  ./move_player/ft_move_player.c ./move_player/ft_simple_position_calc.c ./move_player/ft_corner.c ./move_player/ft_new_position_calc_sides.c ./move_player/ft_there_is_a_wall_sides.c ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c ./move_player/ft_there_is_a_wall_in_my_way.c ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c 
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 38)
@@ -117,13 +118,15 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1500
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x10D2:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -134,6 +137,8 @@ MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -147,9 +152,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 10259
+VSCODE_PID = 1621
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=2/94=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/104=2%
 
 # Pattern-specific Variable Values
 
@@ -157,9 +162,9 @@ VSCODE_PID = 10259
 
 # Directories
 
-# . (device 16777227, inode 570760): 15 files, no impossibilities.
+# . (device 16777227, inode 574852): 14 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -170,17 +175,38 @@ VSCODE_PID = 10259
 all: cub3d
 #  Command-line target.
 #  Implicit rule search has not been done.
-#  Last modified 1969-12-31 23:59:56
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
 #  commands to execute (from `Makefile', line 41):
 	
 
 cub3d:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-06 20:34:04
+#  Implicit/static pattern stem: `'
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := cub3d
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
 #  commands to execute (from `Makefile', line 43):
 	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
 	
@@ -194,7 +220,7 @@ cub3d:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-06 20:33:59
+#  Last modified 2022-08-08 16:03:20
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -228,7 +254,7 @@ clean:
 	
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -240,6 +266,6 @@ clean:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug  6 20:34:22 2022
+# Finished Make data base on Mon Aug  8 16:03:46 2022
 
  

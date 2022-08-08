@@ -23,7 +23,8 @@ int	ft_is_ray_hit_the_wall(t_cub3d **cub, int hyp)
 	k = 0;
 	while (cub[0]->map[i][k] && k < j)
 		k++;
-	if (cub[0]->map[i][k] == '1' || (cub[0]->map[i][k] == '0' && ft_corner(cub, cub[0]->angle, i, j)))
+	if (cub[0]->map[i][k] == '1'
+		|| (cub[0]->map[i][k] == '0' && ft_corner(cub, cub[0]->angle, i, j)))
 	{
 		cub[0]->ray_height[cub[0]->turn][0] = cub[0]->ray_pos[cub[0]->turn][0];
 		cub[0]->ray_height[cub[0]->turn][1] = cub[0]->ray_pos[cub[0]->turn][1];
@@ -64,7 +65,8 @@ void	ft_virtual_pos_of_ray_two(t_cub3d **cub, int turn, double adj)
 
 void	ft_virtual_pos_of_ray(t_cub3d **cub, int turn, double adj, double opp)
 {
-	if (cub[0]->angle == 0 || cub[0]->angle == 100 || cub[0]->angle == 200 || cub[0]->angle == 300)
+	if (cub[0]->angle == 0 || cub[0]->angle == 100
+		|| cub[0]->angle == 200 || cub[0]->angle == 300)
 		ft_virtual_pos_of_ray_two(&cub[0], turn, adj);
 	else if (cub[0]->angle > 0 && cub[0]->angle < 100)
 	{
@@ -88,7 +90,6 @@ void	ft_virtual_pos_of_ray(t_cub3d **cub, int turn, double adj, double opp)
 	}
 }
 
-
 void	ft_get_length_of_ray(t_cub3d **cub)
 {
 	double	adj;
@@ -102,9 +103,7 @@ void	ft_get_length_of_ray(t_cub3d **cub)
 		adj = ft_calc_adjacent(cub[0]->angle, (double) hyp);
 		ft_virtual_pos_of_ray(&cub[0], cub[0]->turn, adj, opp);
 		if (ft_is_ray_hit_the_wall(&cub[0], (double) hyp))
-		{
-			break;
-		}
+			break ;
 		hyp += 1;
 	}
 }

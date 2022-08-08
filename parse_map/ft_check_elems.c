@@ -27,32 +27,6 @@ int	ft_is_a_file(char *line)
 	return (0);
 }
 
-int	ft_is_two_elems(char *elem)
-{
-	int 	i;
-	int		j;
-	char	**tab;
-
-	tab = ft_split_case(elem, ' ');
-	i = 0;
-	if (tab == NULL)
-		return (1);
-	while (tab[i] != NULL)
-		i++;
-	j = 0;
-	if (i != 2)
-	{
-		while (j < i)
-		{
-			free(tab[j]);
-			j++;
-		}
-		free(tab);
-		return (1);
-	}
-	return (0);
-}
-
 int	ft_check_line(char *line, char *elem, int len)
 {
 	char	**tab;

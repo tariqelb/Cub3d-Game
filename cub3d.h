@@ -69,6 +69,8 @@ typedef struct s_cub3d
 	int		y;
 	int		vertical;
 	int		turn;
+	int		adj;
+	int		opp;
 	int		text_x[2001];
 }	t_cub3d;
 
@@ -89,7 +91,7 @@ t_img	img;
 
 # define HEIGHT	900
 # define WIDTH	1700
-# define STEP	10
+# define STEP	25
 
 //PARSE MAP
 // ft_check_map_again_util.c
@@ -117,6 +119,7 @@ int		ft_check_first_and_last_line(char *line);
 int		ft_check_map(char **elem_tab, int len);
 
 // ft_check_elems_util.c
+int		ft_is_two_elems(char *elem);
 void	ft_copy_str(char *line, char **name, int len);
 int		ft_is_one_or_three_digit(char *nbr);
 int		ft_is_color(char *line);
@@ -212,8 +215,8 @@ void	ft_simple_pos_calc_sides_left(t_cub3d **cub, char c, int sides_angle);
 void	ft_simple_pos_calc_sides(t_cub3d **cub, char c, int sides_angle);
 
 // ft_new_position_calc_sides.c
-void	ft_new_position_forward_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
-void	ft_new_position_backward_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
+void	ft_n_pos_f_side(t_cub3d **cub, double adj, double opp, int sides_angle);
+void	ft_n_pos_b_side(t_cub3d **cub, double adj, double opp, int sides_angle);
 
 // ft_there_is_a_wall_sides.c
 void	ft_vir_pos_sides(t_cub3d **cub, double adj, double opp, int sides_angle);
@@ -239,7 +242,11 @@ int		ft_corner(t_cub3d **cub, int angle, int i, int j);
 void	my_img_pix_put(t_cub3d **cub, int x, int y, int color);
 int		ft_wall_space_player(t_cub3d **cub, int i, int j);
 void	ft_mini_map_display(t_cub3d **cub);
+void	ft_display_mini_map_util(t_cub3d **cub, int index_i, int index_j);
+
+// ft_micro_map.c
 void	ft_micro_map_display(t_cub3d **cub);
+void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j);
 
 // ft_event_handler.c
 void	ft_display_map(char **map);
@@ -247,7 +254,7 @@ int		ft_handle_mouse(int x, int y, void **cub);
 int		ft_handle_keys(int key, t_cub3d **cub);
 
 // ft_display.c
-void	ft_screan_display(t_cub3d *cub);
+void	ft_screan_display(t_cub3d *cub, int i, int j);
 int		get_color(t_cub3d *cub, int x, int y, int index);
 void	ft_help_display(int i, int j, t_cub3d *cub, int mid);
 void	img_pix_put(t_cub3d *cub, int x, int y, int color);

@@ -61,7 +61,7 @@ void	ft_calculate_and_move_to_pos_two(t_cub3d **cub, char c)
 		adj = ft_calc_opp0_or_adj1(sides_angle, 1);
 		opp = ft_calc_opp0_or_adj1(sides_angle, 0);
 		if (ft_there_is_a_wall_sides(cub, adj, opp, sides_angle))
-			ft_new_position_forward_sides(cub, adj, opp, sides_angle);
+			ft_n_pos_f_side(cub, adj, opp, sides_angle);
 	}
 }
 
