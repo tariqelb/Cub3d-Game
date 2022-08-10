@@ -54,13 +54,8 @@ int	ft_is_one_or_three_digit(char *nbr)
 	i = 0;
 	while (nbr[i] == ' ')
 		i++;
-	while (nbr[i])
-	{
-		printf("%c\n", nbr[i]);
-		if (nbr[i] < '0' || nbr[i] > '9')
-			return (0);
+	while (nbr[i] && (nbr[i] >= '0' && nbr[i] <= '9'))
 		i++;
-	}
 	while (nbr[i] == ' ')
 		i++;
 	if (nbr[i] != '\0')
@@ -92,10 +87,10 @@ int	ft_is_color(char *line)
 		if (ft_is_one_or_three_digit(nbr[i]) == 0)
 		{
 			nbr = ft_free_tab(nbr, NULL, NULL);
-			return (0);
+			return (1);
 		}
 		i++;
 	}
 	nbr = ft_free_tab(nbr, NULL, NULL);
-	return (1);
+	return (0);
 }

@@ -31,9 +31,9 @@ OBJS = $(SRCS:.c=.o)
 
 FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
+MLX_FLAGS = -L /usr/X11/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
 
-MLX_HEADER = /usr/local/include #if you get error if mlx.h chagne X11 with local
+MLX_HEADER = /usr/X11/include #if you get error if mlx.h chagne X11 with local
 
 CC = cc
 
