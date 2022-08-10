@@ -50,13 +50,17 @@ int	ft_check_right_side(char **tab, int i, int s1, int s2)
 {
 	int	j;
 
+	printf("line is (%s)\n", tab[i]);
 	if (s1 > s2)
 	{
 		j = ft_range_to_check(s2);
 		while (j < s1)
 		{
 			if (tab[i][j] != '1')
-				return (1);
+				{
+					printf("let fix it 1\n");
+					return (1);
+				}
 			j++;
 		}
 	}
@@ -66,7 +70,10 @@ int	ft_check_right_side(char **tab, int i, int s1, int s2)
 		while (j < s2)
 		{
 			if (tab[i + 1][j] != '1')
-				return (1);
+				{
+					printf("let fix it 2\n");
+					return (1);
+				}
 			j++;
 		}
 	}
@@ -89,12 +96,18 @@ int	ft_check_if_sides_suronded_by_one(char **tab, int i, int ver)
 		if (strt != nxt_s)
 		{
 			if (ft_check_left_side(tab, i, strt, nxt_s))
+			{
+				printf("\nleft side %d\n", i);
 				return (1);
+			}
 		}
 		if (end != nxt_e)
 		{
 			if (ft_check_right_side(tab, i, end, nxt_e))
+			{
+				printf("\nright side %d\n", i);
 				return (1);
+			}
 		}
 		i++;
 	}

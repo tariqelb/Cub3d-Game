@@ -114,13 +114,19 @@ int	ft_check_map_again(char **tab, int i, int j)
 			if (tab[i][j] == ' ')
 			{
 				if (ft_go_check_if_one_surronded_space(tab, i, j, ver))
+				{
+					printf("here is the problem 4\n");
 					return (ft_error(7));
+				}
 			}
 			j++;
 		}
 		i++;
 	}
 	if (ft_check_if_sides_suronded_by_one(tab, 0, ver))
-		return (ft_error(7));
+	{
+		printf("here is the problem 5\n");
+			return (ft_error(7));
+	}
 	return (0);
 }

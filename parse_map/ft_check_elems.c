@@ -45,31 +45,6 @@ int	ft_check_line(char *line, char *elem, int len)
 		return (0);
 	return (1);
 }
-// int	ft_check_line(char *line, char *elem, int len)
-// {
-// 	char	**tab;
-// 	int		i;
-
-// 	tab = ft_split_case(line, ' ');
-// 	if (ft_strcmp(tab[0], elem) == 0)
-// 	{
-// 		i = ft_strlen(tab[1]);
-// 		if (tab[1][i - 1] == '\n')
-// 			tab[1][i - 1] = 0;
-// 		if (len == 2 && ft_is_a_file(tab[1]))
-// 		{
-// 			ft_free_tab(tab, NULL, NULL);
-// 			return (1);
-// 		}
-// 		else if (len == 1 && ft_is_color(tab[1]))
-// 		{
-// 			ft_free_tab(tab, NULL, NULL);
-// 			return (1);
-// 		}
-// 	}
-// 	ft_free_tab(tab, NULL, NULL);
-// 	return (0);
-// }
 
 int	ft_number_of_lines_in_file(char	*av)
 {
@@ -125,7 +100,6 @@ int	ft_check_elems(char	**elem_tab)
 	while (elem_tab[i] && i < 6)
 	{	
 		ft_check_elem_identifers(&elem, elem_tab, i);
-		printf("elm %d\n", elem[i]);
 		i++;
 	}
 	i = 0;

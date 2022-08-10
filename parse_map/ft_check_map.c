@@ -115,6 +115,12 @@ int	ft_check_map(char **elem_tab, int len)
 	spc = 0;
 	ort = 0;
 	i = 0;
+	while (i < len)
+	{
+		printf("%d . %s", i, elem_tab[i]);
+		i++;
+	}
+	i = 0;
 	while (elem_tab[i])
 	{
 		n = ft_strlen(elem_tab[i]);
@@ -122,13 +128,22 @@ int	ft_check_map(char **elem_tab, int len)
 		if (i == 0 || i == len - 1)
 		{
 			if (ft_check_first_and_last_line(elem_tab[i]))
+			{
+				printf("here is the problem 1i1\n");
 				return (ft_error(7));
+			}
 		}
 		else if (ft_check_middle_lines(elem_tab[i], &spc, &ort))
-			return (ft_error(7));
+			{
+				printf("here is the problem 2\n");
+				return (ft_error(7));
+			}
 		i++;
 	}
 	if (spc < 1 || ort != 1)
+	{
+		printf("here is the problem 3 %d %d\n", spc, ort);
 		return (ft_error(7));
+	}
 	return (0);
 }
