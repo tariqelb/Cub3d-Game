@@ -39,7 +39,9 @@ int	ft_check_line(char *line, char *elem, int len)
 	i = i + len;
 	while (line[i] && line[i] == ' ')
 		i++;
-	if (ft_is_a_file(&line[i]))
+	if (len == 2 && ft_is_a_file(&line[i]))
+		return (0);
+	if (len == 1 && ft_is_color(&line[i]))
 		return (0);
 	return (1);
 }
@@ -123,6 +125,7 @@ int	ft_check_elems(char	**elem_tab)
 	while (elem_tab[i] && i < 6)
 	{	
 		ft_check_elem_identifers(&elem, elem_tab, i);
+		printf("elm %d\n", elem[i]);
 		i++;
 	}
 	i = 0;

@@ -28,7 +28,6 @@ int		ft_check_is_digit(char **tmp)
 	i = 0;
 	while (i < 3)
 	{
-		printf("{tmp = %s}\n", tmp[i]);
 		k = 0;
 		k = ft_strlen(tmp[i]);
 		if (tmp[i][k - 1] == '\n')
@@ -60,10 +59,7 @@ int	ft_get_numbers(char *elem)
 	tmp = ft_split(&elem[i], ',');
 	i = ft_strlen_tab(tmp);
 	if (ft_check_is_digit(tmp))
-	{
-		printf("what\n");
 		return (-1);
-	}
 	i = 0;
 	color = (int *) malloc(sizeof(int) * 3);
 	while (i < 3)

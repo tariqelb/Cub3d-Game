@@ -51,19 +51,20 @@ int	ft_is_one_or_three_digit(char *nbr)
 {
 	int	i;
 
-	i = ft_strlen(nbr);
-	if (i == 0 || i > 3)
-		return (0);
 	i = 0;
 	while (nbr[i] == ' ')
 		i++;
 	while (nbr[i])
 	{
+		printf("%c\n", nbr[i]);
 		if (nbr[i] < '0' || nbr[i] > '9')
 			return (0);
 		i++;
 	}
-	i = 0;
+	while (nbr[i] == ' ')
+		i++;
+	if (nbr[i] != '\0')
+		return (0);
 	i = ft_atoi(nbr);
 	if (i >= 0 && i <= 255)
 		return (1);
@@ -75,6 +76,7 @@ int	ft_is_color(char *line)
 	char	**nbr;
 	int		i;
 
+	line[ft_strlen(line) - 1] = 0;
 	nbr = ft_split(line, ',');
 	if (nbr == NULL)
 		return (0);

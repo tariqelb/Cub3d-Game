@@ -37,9 +37,6 @@ char	**ft_fill_elem(char *av, char ***elem)
 		line = get_next_line(fd);
 	}
 	elem[0][i] = NULL;
-	i = 0;
-	while (elem[0][i])
-		printf("elem ===> %s", elem[0][i++]);
 	return (elem[0]);
 }
 
