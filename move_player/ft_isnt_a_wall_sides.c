@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-int	ft_check_up_and_update(t_cub3d *cub)
+int	ft_check_up_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
 	int		line_i;
@@ -35,7 +35,7 @@ int	ft_check_up_and_update(t_cub3d *cub)
 	return (1);
 }
 
-int	ft_check_down_and_update(t_cub3d *cub)
+int	ft_check_down_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
 	int		line_i;
@@ -58,7 +58,7 @@ int	ft_check_down_and_update(t_cub3d *cub)
 	return (1);
 }
 
-int	ft_check_left_and_update(t_cub3d *cub)
+int	ft_check_left_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
 	int		line_i;
@@ -81,7 +81,7 @@ int	ft_check_left_and_update(t_cub3d *cub)
 	return (1);
 }
 
-int	ft_check_right_and_update(t_cub3d *cub)
+int	ft_check_right_and_update(t_cub3d *cub, char c)
 {
 	char	*map_line;
 	int		line_i;

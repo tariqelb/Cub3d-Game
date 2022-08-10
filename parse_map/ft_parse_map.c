@@ -30,7 +30,37 @@ char	**ft_fill_elem(char *av, char ***elem)
 			elem[0][i] = NULL;
 			ft_free_tab(elem[0], line, NULL);
 			close(fd);
-			free(line);
+			ft_error(7);
+			return (NULL);
+		}
+		free(line);
+		line = get_next_line(fd);
+	}
+	elem[0][i] = NULL;
+	i = 0;
+	while (elem[0][i])
+		printf("elem ===> %s", elem[0][i++]);
+	return (elem[0]);
+}
+
+char	**ft_fill_elem_parse(char *av, char ***elem)
+{
+	char	*line;
+	int		fd;
+	int		i;
+
+	fd = open(av, O_RDONLY);
+	i = 0;
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (ft_strlen(line) > 1)
+			elem[0][i++] = ft_strdup(line);
+		else if (i > 6)// && ft_strlen(line) == 1)
+		{
+			elem[0][i] = NULL;
+			ft_free_tab(elem[0], line, NULL);
+			close(fd);
 			ft_error(7);
 			return (NULL);
 		}
@@ -84,14 +114,17 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 		return (ft_error(3));
 	elem_tab = (char **) malloc(sizeof(char *) * len + 1);
 	elem_tab[len] = NULL;
-	if (ft_fill_elem(av, &elem_tab) == NULL)
+	if (ft_fill_elem_parse(av, &elem_tab) == NULL)
 		return (0);
+	int i ;
+	i = 0;
 	v_elem = ft_check_elems(elem_tab);
 	if (v_elem != 6 || len < 9)
 	{
 		elem_tab = ft_free_tab(elem_tab, NULL, NULL);
 		return (ft_error(4) - 1);
 	}
+	i = 0;
 	v_elem += ft_check_map(&elem_tab[6], len - 6);
 	if (v_elem != 6)
 	{
@@ -99,7 +132,6 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 		return (0);
 	}
 	v_elem += ft_check_map_again(&elem_tab[6], 0, 0);
-	ft_free_tab(elem_tab, NULL, NULL);
 	return (v_elem);
 }
 

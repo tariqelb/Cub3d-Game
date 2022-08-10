@@ -29,29 +29,45 @@ int	ft_is_a_file(char *line)
 
 int	ft_check_line(char *line, char *elem, int len)
 {
-	char	**tab;
-	int		i;
+	int i;
 
-	tab = ft_split_case(line, ' ');
-	if (ft_strcmp(tab[0], elem) == 0)
-	{
-		i = ft_strlen(tab[1]);
-		if (tab[1][i - 1] == '\n')
-			tab[1][i - 1] = 0;
-		if (len == 2 && ft_is_a_file(tab[1]))
-		{
-			ft_free_tab(tab, NULL, NULL);
-			return (1);
-		}
-		else if (len == 1 && ft_is_color(tab[1]))
-		{
-			ft_free_tab(tab, NULL, NULL);
-			return (1);
-		}
-	}
-	ft_free_tab(tab, NULL, NULL);
-	return (0);
+	i = 0;
+	while (line[i] && line[i] == ' ')
+		i++;
+	if (ft_strncmp(&line[i], elem, len) != 0)
+		return (0);
+	i = i + len;
+	while (line[i] && line[i] == ' ')
+		i++;
+	if (ft_is_a_file(&line[i]))
+		return (0);
+	return (1);
 }
+// int	ft_check_line(char *line, char *elem, int len)
+// {
+// 	char	**tab;
+// 	int		i;
+
+// 	tab = ft_split_case(line, ' ');
+// 	if (ft_strcmp(tab[0], elem) == 0)
+// 	{
+// 		i = ft_strlen(tab[1]);
+// 		if (tab[1][i - 1] == '\n')
+// 			tab[1][i - 1] = 0;
+// 		if (len == 2 && ft_is_a_file(tab[1]))
+// 		{
+// 			ft_free_tab(tab, NULL, NULL);
+// 			return (1);
+// 		}
+// 		else if (len == 1 && ft_is_color(tab[1]))
+// 		{
+// 			ft_free_tab(tab, NULL, NULL);
+// 			return (1);
+// 		}
+// 	}
+// 	ft_free_tab(tab, NULL, NULL);
+// 	return (0);
+// }
 
 int	ft_number_of_lines_in_file(char	*av)
 {
@@ -105,19 +121,17 @@ int	ft_check_elems(char	**elem_tab)
 		elem[i++] = 0;
 	i = 0;
 	while (elem_tab[i] && i < 6)
-	{
-		if (ft_is_two_elems(elem_tab[i]) == 1)
-		{
-			free(elem);
-			return (1);
-		}
+	{	
 		ft_check_elem_identifers(&elem, elem_tab, i);
 		i++;
 	}
-	i = -1;
+	i = 0;
 	sum = 0;
-	while (++i < 6)
+	while (i < 6)
+	{
 		sum += elem[i];
+		i++;
+	}
 	free(elem);
 	return (sum);
 }

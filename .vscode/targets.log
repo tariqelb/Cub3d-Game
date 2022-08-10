@@ -1,0 +1,246 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Wed Aug 10 12:28:50 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+ 
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/tel-bouh/Desktop/cub3d11
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 30)
+OBJS = $(SRCS:.c=.o)
+# environment
+VSCODE_CWD = /
+# environment
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.jj10WREJOO/Render
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.j1nQXoefC8/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+PWD = /Users/tel-bouh/Desktop/cub3d11
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/tel-bouh
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/tel-bouh/Library/Application Support/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+# environment
+LOGNAME = tel-bouh
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/tel-bouh/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 15)
+SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse_map/ft_check_elems_util.c ./parse_map/ft_check_map.c ./parse_map/ft_check_map_again.c ./parse_map/ft_check_map_again_util.c ./parse_map/ft_check_map_util.c ./parse_map/ft_split.c ./parse_map/ft_strdup.c ./parse_map/ft_strcmp.c ./parse_map/ft_strlen_tab.c ./parse_map/ft_free.c ./parse_map/ft_atoi.c ./parse_map/ft_split_quote.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./init/ft_initialize_struct.c ./init/ft_initialize_struct_util.c ./init/ft_strncmp.c ./convert_2d_to_3d/ft_display.c ./convert_2d_to_3d/ft_event_handler.c ./convert_2d_to_3d/ft_mini_map.c  ./convert_2d_to_3d/ft_micro_map.c ./move_player/ft_isnt_a_wall.c ./move_player/ft_there_is_a_wall.c ./move_player/ft_new_position_calc.c ./move_player/ft_straight_move.c  ./move_player/ft_move_player.c ./move_player/ft_simple_position_calc.c ./move_player/ft_corner.c ./move_player/ft_new_position_calc_sides.c ./move_player/ft_there_is_a_wall_sides.c ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c ./move_player/ft_there_is_a_wall_in_my_way.c ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c 
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 38)
+CC = cc
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = tel-bouh
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 36)
+MLX_HEADER = /usr/local/include 
+# makefile (from `Makefile', line 13)
+NAME = cub3d
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n0000ht800046k/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/tel-bouh/Library/Application Support/Code/1.69.1-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.1272
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x10D2:0x0:0x0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 34)
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit 
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from `Makefile', line 32)
+FLAGS = 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 63043
+# variable set hash-table stats:
+# Load=68/1024=7%, Rehash=0, Collisions=2/94=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777227, inode 596734): 15 files, no impossibilities.
+
+# 15 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all: cub3d
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Last modified 1969-12-31 23:59:56
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 41):
+	
+
+cub3d:
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-10 12:20:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 43):
+	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-09 11:40:07
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 52):
+	rm -rf $(NAME)
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 49):
+	rm -rf $(OBJS)
+	
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Wed Aug 10 12:28:50 2022
+
+ 

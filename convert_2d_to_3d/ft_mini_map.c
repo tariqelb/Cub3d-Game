@@ -76,7 +76,6 @@ void	ft_mini_map_display(t_cub3d **cub)
 	int	index_i;
 	int	index_j;
 
-	index_j = 0;
 	if (cub[0]->xyz[0] > 40 || cub[0]->xyz[1] > 60)
 		ft_micro_map_display(cub);
 	else

@@ -123,5 +123,6 @@ void	ft_ray_casting(t_cub3d **cub)
 			cub[0]->angle -= 400;
 		ft_get_length_of_ray(&cub[0]);
 		cub[0]->turn++;
-	}	
+	}
+	ft_display_map(cub[0]->map);
 }

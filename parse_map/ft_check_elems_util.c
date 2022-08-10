@@ -27,12 +27,7 @@ int	ft_is_two_elems(char *elem)
 	j = 0;
 	if (i != 2)
 	{
-		while (j < i)
-		{
-			free(tab);
-			j++;
-		}
-		free(tab);
+		ft_free_tab(tab, NULL, NULL);
 		return (1);
 	}
 	ft_free_tab(tab, NULL, NULL);
@@ -60,6 +55,8 @@ int	ft_is_one_or_three_digit(char *nbr)
 	if (i == 0 || i > 3)
 		return (0);
 	i = 0;
+	while (nbr[i] == ' ')
+		i++;
 	while (nbr[i])
 	{
 		if (nbr[i] < '0' || nbr[i] > '9')

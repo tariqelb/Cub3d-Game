@@ -74,6 +74,21 @@ typedef struct s_cub3d
 	int		text_x[2001];
 }	t_cub3d;
 
+typedef struct s_img
+{
+	void	*mlx_ptr;
+	void	*mlx_win;
+	void	*mlx_img;
+	void	*mlx_map;
+	char	*addr;
+	char	*addr_map;
+	int		map_w;
+	int		map_h;
+	t_cub3d	*cub;
+}			t_img;
+
+t_img	img;
+
 # define HEIGHT	900
 # define WIDTH	1700
 # define STEP	25
@@ -186,13 +201,13 @@ void	ft_simple_pos_calc(t_cub3d **cub, char c);
 void	ft_simple_pos_calc_backward(t_cub3d **cub, char c);
 
 // ft_isnt_a_wall_sides.c
-int		ft_check_up_and_update(t_cub3d *cub);
-int		ft_check_down_and_update(t_cub3d *cub);
-int		ft_check_left_and_update(t_cub3d *cub);
-int		ft_check_right_and_update(t_cub3d *cub);
+int		ft_check_up_and_update(t_cub3d *cub, char c);
+int		ft_check_down_and_update(t_cub3d *cub, char c);
+int		ft_check_left_and_update(t_cub3d *cub, char c);
+int		ft_check_right_and_update(t_cub3d *cub, char c);
 
 // ft_simple_position_calc_sides.c
-int		ft_isnt_a_wall_sides(t_cub3d *cub, int sides_angle);
+int		ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle);
 int		ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle);
 int		ft_check_new_pos_right(t_cub3d *cub, char c, int sides_angle);
 int		ft_check_new_pos_sides(t_cub3d *cub, char c, int sides_angle);

@@ -98,6 +98,11 @@ int	ft_right_under(t_cub3d **cub, int i, int j)
 
 int	ft_corner(t_cub3d **cub, int angle, int i, int j)
 {
+	int	u;
+	int	d;
+	int	l;
+	int	r;
+
 	if (angle > 0 && angle < 100)
 	{
 		return (ft_left_under(cub, i, j));

@@ -29,18 +29,21 @@ SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse
 
 OBJS = $(SRCS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
 
-MLX_HEADER = /usr/local/include
+MLX_HEADER = /usr/local/include #if you get error if mlx.h chagne X11 with local
 
 CC = cc
 
 all : $(NAME)
 	
-$(NAME) : $(OBJS)
+$(NAME) :
 	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
+
+#.c:.o :
+#	$(CC) -c $(FLAGS) $< -o $@
 
 clean :
 	rm -rf $(OBJS)
