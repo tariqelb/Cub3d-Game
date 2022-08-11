@@ -32,7 +32,7 @@ int	ft_check_middle_line_util(char *line, int *spc, int *ort, int i)
 				ort[0]++;
 			i++;
 		}
-		else if (line[i] == ' ' && i != 0
+		else if (line[i] == ' ' && i != 0 && line[i + 1] != 0
 			&& (line[i - 1] != '1' || line[i + 1] != '1'))
 			return (1);
 		else
