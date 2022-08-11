@@ -23,23 +23,31 @@ int	ft_check_left_side(char **tab, int i, int s1, int s2)
 {
 	int	j;
 
+//printf("walk\n");
+//printf("line is (%s) %d %d %d\n", tab[i + 1], i + 1, s1, s2);
 	if (s1 > s2)
 	{
 		j = ft_range_to_check(s2);
-		while (j <= s1)
+		while (j <= s1 && tab[i +1][j])
 		{
-			if (tab[i + 1][j] != '1')
+			if (tab[i + 1][j] == '0')//if (tab[i + 1][j] != '1')
+			{
+				//printf("range 1\n");
 				return (1);
+			}
 			j++;
 		}
 	}
 	else if (s1 < s2)
 	{
 		j = ft_range_to_check(s1);
-		while (j <= s2)
+		while (j <= s2 && tab[i][j])
 		{
-			if (tab[i][j] != '1')
+			if (tab[i][j] == '0')//if (tab[i][j] != '1')
+			{
+				//printf("range 1\n");
 				return (1);
+			}
 			j++;
 		}
 	}
@@ -50,15 +58,15 @@ int	ft_check_right_side(char **tab, int i, int s1, int s2)
 {
 	int	j;
 
-	printf("line is (%s)\n", tab[i]);
+//		printf("line is (%s) %d %d %d\n", tab[i + 1], i + 1, s1, s2);
 	if (s1 > s2)
 	{
 		j = ft_range_to_check(s2);
-		while (j < s1)
+		while (j < s1 && tab[i][j])
 		{
-			if (tab[i][j] != '1')
+			if (tab[i][j] == '0')//(tab[i][j] != '1')
 				{
-					printf("let fix it 1\n");
+					//printf("let fix it 1\n");
 					return (1);
 				}
 			j++;
@@ -67,11 +75,11 @@ int	ft_check_right_side(char **tab, int i, int s1, int s2)
 	else if (s1 < s2)
 	{
 		j = ft_range_to_check(s1);
-		while (j < s2)
+		while (j < s2 && tab[i + 1][j])
 		{
-			if (tab[i + 1][j] != '1')
+			if (tab[i + 1][j] == '0')
 				{
-					printf("let fix it 2\n");
+					//printf("let fix it 2 . tab[i][j] [%c] %d %d\n", tab[i][j], i + 1 , j);
 					return (1);
 				}
 			j++;
@@ -97,7 +105,7 @@ int	ft_check_if_sides_suronded_by_one(char **tab, int i, int ver)
 		{
 			if (ft_check_left_side(tab, i, strt, nxt_s))
 			{
-				printf("\nleft side %d\n", i);
+				//printf("\nleft side %d\n", i);
 				return (1);
 			}
 		}
@@ -105,7 +113,7 @@ int	ft_check_if_sides_suronded_by_one(char **tab, int i, int ver)
 		{
 			if (ft_check_right_side(tab, i, end, nxt_e))
 			{
-				printf("\nright side %d\n", i);
+				//printf("\nright side %d\n", i);
 				return (1);
 			}
 		}

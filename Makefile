@@ -6,7 +6,7 @@
 #    By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/12 10:26:35 by tel-bouh          #+#    #+#              #
-#    Updated: 2022/08/08 16:29:38 by zezzine          ###   ########.fr        #
+#    Updated: 2022/08/10 19:10:37 by tel-bouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ OBJS = $(SRCS:.c=.o)
 
 FLAGS = #-Wall -Wextra -Werror
 
-MLX_FLAGS = -L /usr/X11/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit #if you get error if mlx.h chagne X11 with local
 
-MLX_HEADER = /usr/X11/include #if you get error if mlx.h chagne X11 with local
+MLX_HEADER = /usr/local/include #if you get error if mlx.h chagne X11 with local
 
 CC = cc
 

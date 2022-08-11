@@ -12,30 +12,48 @@
 
 #include "../cub3d.h"
 
-int	ft_check_above(char **tab, int i, int j)
+int	ft_check_above1(char **tab, int i, int j)
 {
 	int	len;
 
+	len = ft_strlen(tab[i - 1]);
+	if (len >= j && tab[i - 1][j] != '1' && tab[i - 1][j] != ' ')
+		return (1);
+	if (j != 0 &&  tab[i][j - 1] != ' ' && tab[i][j - 1] != '1')
+		return (1);
+	if (j != len -1 && tab[i][j + 1] != ' ' && tab[i][j + 1] != '1')
+		return (1);
+	if (tab[i + 1][j] != ' ' && tab[i + 1][j] != '1')
+		return (1);
+	return (0);
+}
+
+int	ft_check_above(char **tab, int i, int j)
+{
+	int	len;
+	int p_len;
+
 	len = ft_strlen(tab[i]);
+	p_len = ft_strlen(tab[i - 1]);
 	if (len > j)
 	{
-		if (tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
+		if (p_len >= j && tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
 			return (1);
-		if (tab[i - 1][j] != ' ' && tab[i - 1][j] != '1')
+		if (p_len > j && tab[i - 1][j] != ' ' && tab[i - 1][j] != '1')
 			return (1);
-		if (tab[i - 1][j + 1] != ' ' && tab[i - 1][j + 1] != '1')
+		if (p_len > j + 1 && tab[i - 1][j + 1] != ' ' && tab[i - 1][j + 1] != '1')
 			return (1);
 	}
 	else if (len == j)
 	{
-		if (tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
+		if (p_len >= j && tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
 			return (1);
-		if (tab[i - 1][j] != ' ' && tab[i - 1][j] != '1')
+		if (p_len > j && tab[i - 1][j] != ' ' && tab[i - 1][j] != '1')
 			return (1);
 	}
 	else if (len == j - 1)
 	{
-		if (tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
+		if (p_len >= j && tab[i - 1][j - 1] != ' ' && tab[i - 1][j - 1] != '1')
 			return (1);
 	}
 	return (0);
@@ -99,11 +117,30 @@ int	ft_go_check_if_one_surronded_space(char **tab, int i, int j, int ver)
 	return (0);
 }
 
+void	ft_remove_newline(char **tab, int number_of_line)
+{
+	int	i;
+	int len;
+
+	i = 0;
+	while (i < number_of_line)
+	{
+		len = 0;
+		len = ft_strlen(tab[i]);
+		if (tab[i][len - 1] == '\n')
+		{
+			tab[i][len - 1] = 0;
+		}
+		i++;
+	}
+}
+
 int	ft_check_map_again(char **tab, int i, int j)
 {
 	int	ver;
 
 	ver = ft_strlen_tab(tab);
+	ft_remove_newline(&tab[0], ver);
 	while (tab[i] != NULL)
 	{
 		j = 0;
