@@ -29,7 +29,7 @@ int	ft_is_a_file(char *line)
 
 int	ft_check_line(char *line, char *elem, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (line[i] && line[i] == ' ')

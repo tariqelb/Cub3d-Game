@@ -53,7 +53,7 @@ char	**ft_fill_elem_parse(char *av, char ***elem)
 	{
 		if (ft_strlen(line) > 1)
 			elem[0][i++] = ft_strdup(line);
-		else if (i > 6)// && ft_strlen(line) == 1)
+		else if (i > 6)
 		{
 			elem[0][i] = NULL;
 			ft_free_tab(elem[0], line, NULL);
@@ -88,19 +88,6 @@ int	ft_error(int number)
 	return (1);
 }
 
-int	ft_valide_extension(char *av)
-{
-	int	i;
-
-	i = ft_strlen(av);
-	if (i < 5)
-		return (0);
-	if (av[i] == 0 && av[i - 1] == 'b' && av[i - 2] == 'u'
-		&& av[i - 3] == 'c' && av[i - 4] == '.')
-		return (1);
-	return (0);
-}
-
 int	ft_parse_map_file_lines(char *av, int v_elem)
 {
 	int		len;
@@ -113,15 +100,12 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 	elem_tab[len] = NULL;
 	if (ft_fill_elem_parse(av, &elem_tab) == NULL)
 		return (0);
-	int i ;
-	i = 0;
 	v_elem = ft_check_elems(elem_tab);
 	if (v_elem != 6 || len < 9)
 	{
 		elem_tab = ft_free_tab(elem_tab, NULL, NULL);
 		return (ft_error(4) - 1);
 	}
-	i = 0;
 	v_elem += ft_check_map(&elem_tab[6], len - 6);
 	if (v_elem != 6)
 	{
@@ -129,6 +113,7 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 		return (0);
 	}
 	v_elem += ft_check_map_again(&elem_tab[6], 0, 0);
+	elem_tab = ft_free_tab(elem_tab, NULL, NULL);
 	return (v_elem);
 }
 

@@ -8,10 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Aug 11 14:25:52 2022
+# Make data base, printed on Thu Aug 11 22:08:34 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -23,7 +24,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/tel-bouh/cub3d_v11
+CURDIR := /Users/tel-bouh/Desktop/cub3d_v12
 # makefile
 SHELL = /bin/sh
 # environment
@@ -32,13 +33,12 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 30)
+# makefile (from `Makefile', line 32)
 OBJS = $(SRCS:.c=.o)
- 
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.7SmbOj3qo7/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.DteG3sE89v/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -48,11 +48,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.gPZ27Xg32o/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7OXzuZCxTm/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/tel-bouh/cub3d_v11
+PWD = /Users/tel-bouh/Desktop/cub3d_v12
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -80,10 +80,10 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 15)
-SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse_map/ft_check_elems_util.c ./parse_map/ft_check_map.c ./parse_map/ft_check_map_again.c ./parse_map/ft_check_map_again_util.c ./parse_map/ft_check_map_util.c ./parse_map/ft_split.c ./parse_map/ft_strdup.c ./parse_map/ft_strcmp.c ./parse_map/ft_strlen_tab.c ./parse_map/ft_free.c ./parse_map/ft_atoi.c ./parse_map/ft_split_quote.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./init/ft_initialize_struct.c ./init/ft_initialize_struct_util.c ./init/ft_strncmp.c ./convert_2d_to_3d/ft_display.c ./convert_2d_to_3d/ft_event_handler.c ./convert_2d_to_3d/ft_mini_map.c  ./convert_2d_to_3d/ft_micro_map.c ./move_player/ft_isnt_a_wall.c ./move_player/ft_there_is_a_wall.c ./move_player/ft_new_position_calc.c ./move_player/ft_straight_move.c  ./move_player/ft_move_player.c ./move_player/ft_simple_position_calc.c ./move_player/ft_corner.c ./move_player/ft_new_position_calc_sides.c ./move_player/ft_there_is_a_wall_sides.c ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c ./move_player/ft_there_is_a_wall_in_my_way.c ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c 
+SRCS = ./cub3d.c ./parse_map/ft_parse_map.c ./parse_map/ft_check_elems.c ./parse_map/ft_check_elems_util.c ./parse_map/ft_check_map.c ./parse_map/ft_check_map_again.c ./parse_map/ft_check_map_again_util.c ./parse_map/ft_check_map_util.c ./parse_map/ft_split.c ./parse_map/ft_strdup.c ./parse_map/ft_strcmp.c ./parse_map/ft_strlen_tab.c ./parse_map/ft_free.c ./parse_map/ft_atoi.c ./parse_map/ft_split_quote.c ./parse_map/ft_parse_map_utils.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./init/ft_initialize_struct.c ./init/ft_initialize_struct_util.c ./init/ft_strncmp.c ./init/ft_check_digit.c ./convert_2d_to_3d/ft_display.c ./convert_2d_to_3d/ft_event_handler.c ./convert_2d_to_3d/ft_mini_map.c ./convert_2d_to_3d/ft_micro_map.c ./move_player/ft_isnt_a_wall.c ./move_player/ft_there_is_a_wall.c ./move_player/ft_new_position_calc.c ./move_player/ft_straight_move.c  ./move_player/ft_move_player.c ./move_player/ft_simple_position_calc.c ./move_player/ft_corner.c ./move_player/ft_new_position_calc_sides.c ./move_player/ft_there_is_a_wall_sides.c ./move_player/ft_isnt_a_wall_sides.c ./move_player/ft_simple_position_calc_sides.c ./move_player/ft_there_is_a_wall_in_my_way.c ./ray_casting/ft_ray_casting.c ./ray_casting/ft_triangle_calculation.c ./ray_casting/ft_get_color.c 
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 38)
+# makefile (from `Makefile', line 40)
 CC = cc
 # default
 MAKE_VERSION := 3.81
@@ -91,7 +91,7 @@ MAKE_VERSION := 3.81
 USER = tel-bouh
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from `Makefile', line 36)
+# makefile (from `Makefile', line 38)
 MLX_HEADER = /usr/local/include 
 # makefile (from `Makefile', line 13)
 NAME = cub3d
@@ -118,28 +118,32 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1188
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x10D2:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from `Makefile', line 34)
+# makefile (from `Makefile', line 36)
 MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit 
 # environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 32)
+# makefile (from `Makefile', line 34)
 FLAGS = 
 # default
 .INCLUDE_DIRS = /usr/local/include
@@ -148,9 +152,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9704
+VSCODE_PID = 7135
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=2/94=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/104=2%
 
 # Pattern-specific Variable Values
 
@@ -158,9 +162,9 @@ VSCODE_PID = 9704
 
 # Directories
 
-# . (device 16777227, inode 611209): 15 files, no impossibilities.
+# . (device 16777227, inode 619130): 14 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -171,18 +175,39 @@ VSCODE_PID = 9704
 all: cub3d
 #  Command-line target.
 #  Implicit rule search has not been done.
-#  Last modified 1969-12-31 23:59:56
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  commands to execute (from `Makefile', line 41):
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  commands to execute (from `Makefile', line 43):
 	
 
 cub3d:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-11 13:17:47
+#  Implicit/static pattern stem: `'
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  commands to execute (from `Makefile', line 43):
+#  Needs to be updated (-q is set).
+# automatic
+# @ := cub3d
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  commands to execute (from `Makefile', line 45):
 	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
 	
 
@@ -195,7 +220,7 @@ cub3d:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-10 19:10:37
+#  Last modified 2022-08-11 22:08:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -205,7 +230,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 52):
+#  commands to execute (from `Makefile', line 54):
 	rm -rf $(NAME)
 	
 
@@ -224,12 +249,12 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 49):
+#  commands to execute (from `Makefile', line 51):
 	rm -rf $(OBJS)
 	
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -241,6 +266,6 @@ clean:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug 11 14:25:52 2022
+# Finished Make data base on Thu Aug 11 22:08:34 2022
 
  

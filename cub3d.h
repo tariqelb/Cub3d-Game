@@ -91,9 +91,6 @@ typedef struct s_img
 	t_cub3d	*cub;
 }			t_img;
 
-t_img	img;
-
-
 //PARSE MAP
 // ft_check_map_again_util.c
 int		ft_range_to_check(int s1);
@@ -139,6 +136,11 @@ int		ft_valide_extension(char *av);
 int		ft_parse_map_file_lines(char *av, int v_elem);
 int		ft_parse_map_file(int ac, char **av);
 
+// ft_parse_map_utils.c
+int		ft_last_space_in_line(char *tab, int i, int j);
+void	ft_remove_newline(char **tab, int number_of_line);
+int		ft_valide_extension(char *av);
+
 // libft functions
 int		ft_strlen_tab(char **str);
 int		ft_strcmp_case(char *line, char *elem, int i);
@@ -168,6 +170,11 @@ int		ft_mlx_error(int number);
 int		ft_at_least_one_digit(char *tmp);
 //int		ft_initialize_window(t_cub3d ***cub);
 t_cub3d	*ft_initialize_struct(char *av, t_cub3d **cub);
+
+// ft_check_digit.c
+int		ft_is_digit(char c);
+int		ft_check_is_digit(char **tmp);
+int		ft_at_least_one_digit(char *tmp);
 
 // MOVE PLAYER
 // ft_there_is_a_wall.c

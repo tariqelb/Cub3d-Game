@@ -12,54 +12,6 @@
 
 #include "../cub3d.h"
 
-int		ft_is_digit(char c)
-{
-	if ((c >= '0' && c <= '9') || c == ' ')
-		return (0);
-	return (1);
-}
-
-int	ft_at_least_one_digit(char *tmp)
-{
-	int	i;
-
-	i = 0;
-	while(tmp[i])
-	{
-		if (tmp[i] >= '0' && tmp[i] <= '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int		ft_check_is_digit(char **tmp)
-{
-	int i;
-	int j;
-	int	k;
-
-	i = 0;
-	while (i < 3)
-	{
-		k = 0;
-		k = ft_strlen(tmp[i]);
-		if (tmp[i][k - 1] == '\n')
-			tmp[i][k - 1] = 0;
-		j = 0;
-		while (tmp[i][j])
-		{
-			if (ft_is_digit(tmp[i][j]))
-				return (1);
-			j++;
-		}
-		if (ft_at_least_one_digit(tmp[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	ft_get_numbers(char *elem)
 {
 	int			*color;
@@ -91,7 +43,7 @@ int	ft_get_numbers(char *elem)
 
 void	*ft_get_texture(t_cub3d **cub, void *texture, char *elem)
 {
-	char*	tmp;
+	char	*tmp;
 	int		h;
 	int		w;
 	int		i;
@@ -168,9 +120,7 @@ int	ft_fill_cub(t_cub3d **cub, char **elems)
 			cub[0]->c = ft_get_numbers(elems[i]);
 	}
 	if (ft_check_texture(&cub[0]))
-	{
 		return (1);
-	}
 	return (0);
 }
 

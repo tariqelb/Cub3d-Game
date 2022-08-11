@@ -50,9 +50,9 @@ void	ft_copy_str(char *line, char **name, int len)
 int	ft_is_one_or_three_digit(char *nbr)
 {
 	int	i;
-	
+
 	if (ft_at_least_one_digit(nbr))
-			return (0);
+		return (0);
 	i = 0;
 	while (nbr[i] == ' ')
 		i++;
@@ -84,7 +84,7 @@ int	ft_is_color(char *line)
 		return (1);
 	}
 	i = 0;
-	while (i < 3) 
+	while (i < 3)
 	{
 		if (ft_is_one_or_three_digit(nbr[i]) == 0)
 		{

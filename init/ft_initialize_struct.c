@@ -94,7 +94,6 @@ t_cub3d	*ft_initialize_struct(char *av, t_cub3d **cub)
 	}
 	if (ft_fill_cub_elems(&cub[0], av))
 	{
-		// free(cub[0]);
 		write(2, "Error\n", 6);
 		write(2, "Not a valide elements\n", 23);
 		ft_close_win(cub);
