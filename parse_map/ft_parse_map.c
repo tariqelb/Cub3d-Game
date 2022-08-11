@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:03:15 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:34:55 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 19:05:01 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int	ft_parse_map_file_lines(char *av, int v_elem)
 	int i ;
 	i = 0;
 	v_elem = ft_check_elems(elem_tab);
+	printf(" ellelel %d\n", v_elem);
 	if (v_elem != 6 || len < 9)
 	{
 		elem_tab = ft_free_tab(elem_tab, NULL, NULL);

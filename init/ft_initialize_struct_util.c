@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 22:48:21 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:20:25 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 18:01:32 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@ int		ft_is_digit(char c)
 {
 	if ((c >= '0' && c <= '9') || c == ' ')
 		return (0);
+	return (1);
+}
+
+int	ft_at_least_one_digit(char *tmp)
+{
+	int	i;
+
+	i = 0;
+	while(tmp[i])
+	{
+		if (tmp[i] >= '0' && tmp[i] <= '9')
+			return (0);
+		i++;
+	}
 	return (1);
 }
 
@@ -39,6 +53,8 @@ int		ft_check_is_digit(char **tmp)
 				return (1);
 			j++;
 		}
+		if (ft_at_least_one_digit(tmp[i]))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -152,10 +168,9 @@ int	ft_fill_cub(t_cub3d **cub, char **elems)
 			cub[0]->c = ft_get_numbers(elems[i]);
 	}
 	if (ft_check_texture(&cub[0]))
-		{
-			printf("here\n");
-			return (1);
-		}
+	{
+		return (1);
+	}
 	return (0);
 }
 

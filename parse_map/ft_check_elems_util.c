@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_elems_util.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-bouh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:25:05 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/05/16 22:24:27 by tel-bouh         ###   ########.fr       */
+/*   Updated: 2022/08/11 19:05:51 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ void	ft_copy_str(char *line, char **name, int len)
 int	ft_is_one_or_three_digit(char *nbr)
 {
 	int	i;
-
+	
+	if (ft_at_least_one_digit(nbr))
+			return (0);
 	i = 0;
 	while (nbr[i] == ' ')
 		i++;
@@ -82,7 +84,7 @@ int	ft_is_color(char *line)
 		return (1);
 	}
 	i = 0;
-	while (i < 3)
+	while (i < 3) 
 	{
 		if (ft_is_one_or_three_digit(nbr[i]) == 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:00:48 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:16:14 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 19:03:52 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_close_win(t_cub3d **cub)
 {
 	ft_free_tab(cub[0]->map, NULL, NULL);
 	free(cub[0]);
-	//mlx_clear_window(cub[0]->mlx, cub[0]->win); leaks
-	//mlx_destroy_window(cub[0]->mlx, cub[0]->win);
+	mlx_clear_window(cub[0]->mlx, cub[0]->win);
+	mlx_destroy_window(cub[0]->mlx, cub[0]->win);
 	exit(0);
 	return (0);
 }
@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 	cub = NULL;
 	if (ft_parse_map_file(ac, av))
 		return (1);
-	
+	printf("passing\n");
 	cub = (t_cub3d **) malloc(sizeof(t_cub3d *) * 2);
 	cub[0] = (t_cub3d *) malloc(sizeof(t_cub3d));
 	cub[1] = NULL;

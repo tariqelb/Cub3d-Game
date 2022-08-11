@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 20:52:23 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:34:03 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 17:23:07 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_check_first_and_last_line_util(char *line, int i, int *w)
 		if (line[i] == ' ')
 		{
 			i = ft_skip_space(line, i);
-			if (line[i] != '1')
+			if (line[i] != '1' && line[i] != ' ')
 				{
 					printf("la\n");
 					return (1);

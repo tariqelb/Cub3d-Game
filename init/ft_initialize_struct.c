@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 12:34:42 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/06 09:20:45 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 18:07:17 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,10 @@ t_cub3d	*ft_initialize_struct(char *av, t_cub3d **cub)
 	}
 	if (ft_fill_cub_elems(&cub[0], av))
 	{
-		free(cub[0]);
+		// free(cub[0]);
+		write(2, "Error\n", 6);
+		write(2, "Not a valide elements\n", 23);
+		ft_close_win(cub);
 		return (NULL);
 	}
 	return (cub[0]);

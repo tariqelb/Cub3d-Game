@@ -6,7 +6,7 @@
 /*   By: zezzine <zezzine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:36:39 by tel-bouh          #+#    #+#             */
-/*   Updated: 2022/08/08 16:42:56 by zezzine          ###   ########.fr       */
+/*   Updated: 2022/08/11 19:01:29 by zezzine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,6 +164,7 @@ int		ft_fill_cub_elems(t_cub3d **cub, char *av);
 void	ft_position_in_pixel(t_cub3d **cub, int xyz[], int x, int max_y);
 void	ft_get_p_position(t_cub3d **cub);
 int		ft_mlx_error(int number);
+int		ft_at_least_one_digit(char *tmp);
 //int		ft_initialize_window(t_cub3d ***cub);
 t_cub3d	*ft_initialize_struct(char *av, t_cub3d **cub);
 
