@@ -40,7 +40,6 @@ int	main(int ac, char **av)
 	cub = NULL;
 	if (ft_parse_map_file(ac, av))
 		return (1);
-	printf("passing\n");
 	cub = (t_cub3d **) malloc(sizeof(t_cub3d *) * 2);
 	cub[0] = (t_cub3d *) malloc(sizeof(t_cub3d));
 	cub[1] = NULL;

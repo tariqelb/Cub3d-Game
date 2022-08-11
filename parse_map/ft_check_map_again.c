@@ -147,7 +147,6 @@ int	ft_last_space_in_line(char *tab, int i, int j)
 		else
 			return (0);
 	}
-	printf("i = %d .  %d\n", i, j);
 	return (1);
 }
 
@@ -169,19 +168,13 @@ int	ft_check_map_again(char **tab, int i, int j)
 				if (ft_last_space_in_line(tab[i], i, j))
 					j = j;
 				else if (ft_go_check_if_one_surronded_space(tab, i, j, ver))
-				{
-					printf("here is the problem 4\n");
 					return (ft_error(7));
-				}
 			}
 			j++;
 		}
 		i++;
 	}
 	if (ft_check_if_sides_suronded_by_one(tab, 0, ver))
-	{
-		printf("here is the problem 5\n");
 			return (ft_error(7));
-	}
 	return (0);
 }

@@ -68,20 +68,14 @@ int	ft_check_first_and_last_line_util(char *line, int i, int *w)
 	while (line[i])
 	{
 		if (line[i] != '1' && line[i] != 32)
-			{
-				printf("\n (((%s))) lo [%c], %d\n", line, line[i], i);
-				return (1);
-			}
+			return (1);
 		if (line[i] == '1')
 			w[0]++;
 		if (line[i] == ' ')
 		{
 			i = ft_skip_space(line, i);
 			if (line[i] != '1' && line[i] != ' ')
-				{
-					printf("la\n");
-					return (1);
-				}
+				return (1);
 		}
 		else
 			i++;
@@ -106,7 +100,6 @@ int	ft_check_first_and_last_line(char *line)
 		if (line[i] != '1')
 			return (1);
 	}
-	//printf("here back \n");
 	if (ft_check_first_and_last_line_util(line, i, &w))
 		return (1);
 	if (w < 2)
@@ -123,12 +116,6 @@ int	ft_check_map(char **elem_tab, int len)
 
 	spc = 0;
 	ort = 0;
-	// i = 0;
-	// while (i < len)
-	// {
-	// 	printf("%d . %s", i, elem_tab[i]);
-	// 	i++;
-	// }
 	i = 0;
 	while (elem_tab[i])
 	{
@@ -138,23 +125,13 @@ int	ft_check_map(char **elem_tab, int len)
 		if (i == 0 || i == len - 1)
 		{
 			if (ft_check_first_and_last_line(elem_tab[i]))
-			{
-				printf("here is the problem 1i1\n");
 				return (ft_error(7));
-			}
 		}
 		else if (ft_check_middle_lines(elem_tab[i], &spc, &ort))
-			{
-
-				printf("here is the problem 2 line %d\n", i);
-				return (ft_error(7));
-			}
+			return (ft_error(7));
 		i++;
 	}
 	if (spc < 1 || ort != 1)
-	{
-		printf("here is the problem 3 %d %d\n", spc, ort);
 		return (ft_error(7));
-	}
 	return (0);
 }

@@ -23,6 +23,10 @@
 # include <sys/types.h>
 # include "./get_next_line/get_next_line.h"
 
+# define HEIGHT	900
+# define WIDTH	1700
+# define STEP	25
+
 typedef struct s_txt
 {
 	char	*txt;
@@ -59,8 +63,8 @@ typedef struct s_cub3d
 	int		p_i;
 	int		p_j;
 	double	cell_w_h[2];
-	double	ray_pos[2000][2];
-	int		ray_height[2000][6];
+	double	ray_pos[WIDTH + 1][2];
+	int		ray_height[WIDTH + 1][6];
 	double	angle;
 	int		mouse;
 	int		number_of_rays;
@@ -89,9 +93,6 @@ typedef struct s_img
 
 t_img	img;
 
-# define HEIGHT	900
-# define WIDTH	1700
-# define STEP	25
 
 //PARSE MAP
 // ft_check_map_again_util.c

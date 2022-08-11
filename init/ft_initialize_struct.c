@@ -18,11 +18,11 @@ void	ft_position_in_pixel(t_cub3d **cub, int xyz[3], int x, int max_y)
 	cub[0]->p_pos[1] = (50) * xyz[0] + ((50) / 2);
 	if (xyz[2] == 'N')
 		cub[0]->p_ort = 0;
-	if (xyz[2] == 'W')
+	if (xyz[2] == 'E')
 		cub[0]->p_ort = 100;
 	if (xyz[2] == 'S')
 		cub[0]->p_ort = 200;
-	if (xyz[2] == 'E')
+	if (xyz[2] == 'W')
 		cub[0]->p_ort = 300;
 	cub[0]->p_i = xyz[0];
 	cub[0]->p_j = xyz[1];
