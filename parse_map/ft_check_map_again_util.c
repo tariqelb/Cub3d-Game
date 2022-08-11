@@ -105,7 +105,7 @@ int	ft_check_if_sides_suronded_by_one(char **tab, int i, int ver)
 		{
 			if (ft_check_left_side(tab, i, strt, nxt_s))
 			{
-				//printf("\nleft side %d\n", i);
+				printf("\nleft side %d\n", i);
 				return (1);
 			}
 		}
@@ -113,7 +113,7 @@ int	ft_check_if_sides_suronded_by_one(char **tab, int i, int ver)
 		{
 			if (ft_check_right_side(tab, i, end, nxt_e))
 			{
-				//printf("\nright side %d\n", i);
+				printf("\nright side %d\n", i);
 				return (1);
 			}
 		}

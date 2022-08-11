@@ -135,6 +135,22 @@ void	ft_remove_newline(char **tab, int number_of_line)
 	}
 }
 
+int	ft_last_space_in_line(char *tab, int i, int j)
+{
+	int x;
+
+	x = j;
+	while (tab[x])
+	{
+		if (tab[x] == ' ')
+			x++;
+		else
+			return (0);
+	}
+	printf("i = %d .  %d\n", i, j);
+	return (1);
+}
+
 int	ft_check_map_again(char **tab, int i, int j)
 {
 	int	ver;
@@ -150,7 +166,9 @@ int	ft_check_map_again(char **tab, int i, int j)
 		{
 			if (tab[i][j] == ' ')
 			{
-				if (ft_go_check_if_one_surronded_space(tab, i, j, ver))
+				if (ft_last_space_in_line(tab[i], i, j))
+					j = j;
+				else if (ft_go_check_if_one_surronded_space(tab, i, j, ver))
 				{
 					printf("here is the problem 4\n");
 					return (ft_error(7));

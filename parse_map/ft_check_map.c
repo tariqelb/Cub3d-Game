@@ -55,7 +55,7 @@ int	ft_check_middle_lines(char *line, int *spc, int *ort)
 		return (0);
 	if (line[i] != '1')
 		return (1);
-	if (line[len - 1] != '1')
+	if (line[len - 1] != '1' && line[len - 1] != ' ')
 		return (1);
 	i = 0;
 	if (ft_check_middle_line_util(line, &spc[0], &ort[0], i))
@@ -139,20 +139,21 @@ int	ft_check_map(char **elem_tab, int len)
 		{
 			if (ft_check_first_and_last_line(elem_tab[i]))
 			{
-				//printf("here is the problem 1i1\n");
+				printf("here is the problem 1i1\n");
 				return (ft_error(7));
 			}
 		}
 		else if (ft_check_middle_lines(elem_tab[i], &spc, &ort))
 			{
-				//printf("here is the problem 2\n");
+
+				printf("here is the problem 2 line %d\n", i);
 				return (ft_error(7));
 			}
 		i++;
 	}
 	if (spc < 1 || ort != 1)
 	{
-		//printf("here is the problem 3 %d %d\n", spc, ort);
+		printf("here is the problem 3 %d %d\n", spc, ort);
 		return (ft_error(7));
 	}
 	return (0);

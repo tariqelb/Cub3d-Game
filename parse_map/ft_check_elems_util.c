@@ -79,7 +79,7 @@ int	ft_is_color(char *line)
 	if (i != 3)
 	{
 		nbr = ft_free_tab(nbr, NULL, NULL);
-		return (0);
+		return (1);
 	}
 	i = 0;
 	while (i < 3)
