@@ -19,12 +19,12 @@ int	ft_get_numbers(char *elem)
 	long int	i;
 	int			index;
 
-	tmp = NULL;
 	color = NULL;
 	index = ft_skip_space(elem, 0);
-	i++;
+	if (elem[index] == 'F' || elem[index] == 'C')
+		index++;
 	index = ft_skip_space(elem, index);
-	tmp = ft_split(&elem[i], ',');
+	tmp = ft_split(&elem[index], ',');
 	i = ft_strlen_tab(tmp);
 	if (ft_check_is_digit(tmp))
 		return (-1);

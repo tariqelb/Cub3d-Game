@@ -110,6 +110,9 @@ void	ft_get_length_of_ray(t_cub3d **cub)
 
 void	ft_ray_casting(t_cub3d **cub)
 {
+	double	turn_angle;
+
+	turn_angle = ((double)60) / ((double) WIDTH);
 	cub[0]->angle = cub[0]->p_ort - 30;
 	if (cub[0]->angle < 0)
 		cub[0]->angle += 400;
@@ -118,7 +121,7 @@ void	ft_ray_casting(t_cub3d **cub)
 	while (cub[0]->turn < WIDTH)
 	{
 		cub[0]->ray_height[cub[0]->turn][0] = 0;
-		cub[0]->angle = cub[0]->angle + 0.03529;
+		cub[0]->angle = cub[0]->angle + turn_angle;
 		if (cub[0]->angle >= 400)
 			cub[0]->angle -= 400;
 		ft_get_length_of_ray(&cub[0]);

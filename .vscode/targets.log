@@ -8,17 +8,17 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Aug 12 11:59:29 2022
+# Make data base, printed on Fri Aug 12 19:10:09 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
- 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -38,9 +38,9 @@ OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.JLCpSTrH8H/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BBvldR399s/Render
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -48,7 +48,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.spvFQ83wxe/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5keQ2DhEZP/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -92,7 +92,7 @@ USER = tel-bouh
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 38)
-MLX_HEADER = /usr/local/include 
+MLX_HEADER = /usr/local/include
 # makefile (from `Makefile', line 13)
 NAME = cub3d
 # environment
@@ -118,29 +118,33 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1100
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x10D2:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # makefile (from `Makefile', line 36)
-MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit 
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
 # environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
 # makefile (from `Makefile', line 34)
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -148,9 +152,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3431
+VSCODE_PID = 1716
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=2/102=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/96=2%
 
 # Pattern-specific Variable Values
 
@@ -158,9 +162,9 @@ VSCODE_PID = 3431
 
 # Directories
 
-# . (device 16777227, inode 619130): 14 files, no impossibilities.
+# . (device 16777227, inode 619130): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -171,38 +175,17 @@ VSCODE_PID = 3431
 all: cub3d
 #  Command-line target.
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 1969-12-31 23:59:56
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  Successfully updated.
 #  commands to execute (from `Makefile', line 43):
 	
 
 cub3d:
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
+#  Last modified 2022-08-12 19:09:46
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := cub3d
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := 
-# automatic
-# | := 
-# automatic
-# < := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  Successfully updated.
 #  commands to execute (from `Makefile', line 45):
 	$(CC) $(FLAGS) -I $(MLX_HEADER) $(MLX_FLAGS) $(SRCS) -o $(NAME)
 	
@@ -216,7 +199,7 @@ cub3d:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-11 22:08:07
+#  Last modified 2022-08-12 19:09:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -226,7 +209,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 54):
+#  commands to execute (from `Makefile', line 51):
 	rm -rf $(NAME)
 	
 
@@ -245,12 +228,12 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 51):
+#  commands to execute (from `Makefile', line 48):
 	rm -rf $(OBJS)
 	
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -262,6 +245,6 @@ clean:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug 12 11:59:29 2022
+# Finished Make data base on Fri Aug 12 19:10:09 2022
 
  

@@ -259,6 +259,7 @@ void	ft_help_micro_map(t_cub3d **cub, int i, int index_i, int index_j);
 
 // ft_event_handler.c
 void	ft_display_map(char **map);
+void	ft_help_handling(t_cub3d **cub);
 int		ft_handle_mouse(int x, int y, void **cub);
 int		ft_handle_keys(int key, t_cub3d **cub);
 
@@ -290,7 +291,7 @@ void	ft_get_length_of_ray(t_cub3d **cub);
 void	ft_ray_casting(t_cub3d **cub);
 
 // cub3d.c
-void	ft_cub3d(t_cub3d *cub);
+void	ft_cub3d(t_cub3d **cub);
 int		ft_close_win(t_cub3d **cub);
 
 #endif

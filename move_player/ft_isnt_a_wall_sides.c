@@ -19,6 +19,7 @@ int	ft_check_up_and_update(t_cub3d *cub, char c)
 	int		i;
 	char	ch;
 
+	(void)c;
 	line_i = cub->p_i - 1;
 	if (line_i == 0 || line_i == cub->xyz[0])
 		return (0);
@@ -42,6 +43,7 @@ int	ft_check_down_and_update(t_cub3d *cub, char c)
 	int		i;
 	char	ch;
 
+	(void)c;
 	line_i = cub->p_i + 1;
 	if (line_i == cub->xyz[0] || line_i == 0)
 		return (0);
@@ -66,6 +68,7 @@ int	ft_check_left_and_update(t_cub3d *cub, char c)
 	int		j;
 	char	ch;
 
+	(void)c;
 	line_i = cub->p_i;
 	map_line = cub->map[line_i];
 	j = cub->p_j - 1;
@@ -89,6 +92,7 @@ int	ft_check_right_and_update(t_cub3d *cub, char c)
 	int		j;
 	char	ch;
 
+	(void)c;
 	line_i = cub->p_i;
 	map_line = cub->map[line_i];
 	j = cub->p_j + 1;

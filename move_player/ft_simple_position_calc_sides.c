@@ -39,6 +39,7 @@ int	ft_isnt_a_wall_sides(t_cub3d *cub, char c, int sides_angle)
 
 int	ft_sides_position_calc(t_cub3d *cub, char c, int sides_angle)
 {
+	(void)c;
 	if (sides_angle == 0)
 		return (cub->p_pos[1] - STEP);
 	else if (sides_angle == 100)

@@ -55,6 +55,7 @@ int	ft_chose_color(t_cub3d **cub, int turn)
 
 int	ft_previews_cell_norm_cases_two(t_cub3d **cub, int hyp, int i, int j)
 {
+	(void)hyp;
 	if (j == cub[0]->y && i < cub[0]->x)
 	{
 		cub[0]->ray_height[cub[0]->turn][3] = 3;

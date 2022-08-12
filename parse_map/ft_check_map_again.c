@@ -115,7 +115,7 @@ int	ft_check_map_again(char **tab, int i, int j)
 			if (tab[i][j] == ' ')
 			{
 				if (ft_last_space_in_line(tab[i], i, j))
-					j = j;
+					j = j + 0;
 				else if (ft_go_check_if_one_surronded_space(tab, i, j, ver))
 					return (ft_error(7));
 			}

@@ -47,6 +47,7 @@ int	ft_last_space_in_line(char *tab, int i, int j)
 {
 	int	x;
 
+	(void) i;
 	x = j;
 	while (tab[x])
 	{

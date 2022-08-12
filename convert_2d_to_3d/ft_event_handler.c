@@ -38,6 +38,7 @@ int	ft_handle_mouse(int x, int y, void **data)
 {
 	t_cub3d	**cub;
 
+	(void) y;
 	cub = (t_cub3d **) data;
 	if (cub[0]->mouse == 0)
 		cub[0]->mouse = x;
