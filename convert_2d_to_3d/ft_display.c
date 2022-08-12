@@ -68,9 +68,9 @@ void	ft_screan_display(t_cub3d *cub, int i, int j)
 		while (++i < HEIGHT)
 		{
 			if (i - v < (((HEIGHT / 2) - mid)))
-				img_pix_put(&cub[0], j, i, 0);
+				img_pix_put(&cub[0], j, i, cub->c);
 			else if (i - v > (((HEIGHT / 2) + mid)))
-				img_pix_put(&cub[0], j, i, 16777215);
+				img_pix_put(&cub[0], j, i, cub->f);
 			else if ((i - v >= (((HEIGHT / 2) - mid)))
 				&& (i - v <= (((HEIGHT / 2)))))
 				ft_help_display(i, j, cub, mid);

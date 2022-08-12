@@ -74,6 +74,8 @@ int	ft_check_first_and_last_line_util(char *line, int i, int *w)
 		if (line[i] == ' ')
 		{
 			i = ft_skip_space(line, i);
+			if (line[i] == 0)
+				return (0);
 			if (line[i] != '1' && line[i] != ' ')
 				return (1);
 		}
