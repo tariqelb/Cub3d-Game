@@ -1,14 +1,14 @@
-NO  ./map/North texture.xpm
+    NO       ./map/North_texture.xpm       
 
-SO  ./map/South_texture.xpm
+     SO        ./map/South_texture.xpm         
 
-WE   ./map/West_texture.xpm
+     WE      ./map/West_texture.xpm     
 
-EA  ./map/East_texture.xpm
+ EA ./map/East_texture.xpm 
 
-F      255,255,   255
+ F 255,255,255    
 
-C      0, 0, 0
+ C 0,0,0      
 
         111111111 11111111111111    
         100000001 10000000000111111

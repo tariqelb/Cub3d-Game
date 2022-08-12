@@ -29,20 +29,27 @@ int	ft_is_a_file(char *line)
 
 int	ft_check_line(char *line, char *elem, int len)
 {
-	int	i;
+	char	**tab;
+	int		i;
 
-	i = 0;
-	while (line[i] && line[i] == ' ')
-		i++;
-	if (ft_strncmp(&line[i], elem, len) != 0)
+	tab = ft_split(line, ' ');
+	i = ft_strlen_tab(tab);
+	if (i != 2 || ft_strncmp(tab[0], elem, len) != 0)
+	{
+		tab = ft_free_tab(tab, NULL, NULL);
 		return (0);
-	i = i + len;
-	while (line[i] && line[i] == ' ')
-		i++;
-	if (len == 2 && ft_is_a_file(&line[i]))
+	}
+	if (len == 2 && !ft_is_a_file(tab[1]))
+	{
+		tab = ft_free_tab(tab, NULL, NULL);
 		return (0);
-	if (len == 1 && ft_is_color(&line[i]))
+	}
+	if (len == 1 && ft_is_color(tab[1]))
+	{
+		tab = ft_free_tab(tab, NULL, NULL);
 		return (0);
+	}
+	ft_free_tab(tab, NULL, NULL);
 	return (1);
 }
 
@@ -72,6 +79,11 @@ int	ft_number_of_lines_in_file(char	*av)
 
 void	ft_check_elem_identifers(int **elem, char **elem_tab, int i)
 {
+	int	len;
+
+	len = ft_strlen(elem_tab[i]);
+	if (len > 0 && elem_tab[i][len - 1] == '\n')
+		elem_tab[i][len - 1] = 0;
 	if (elem[0][0] == 0)
 		elem[0][0] = ft_check_line(elem_tab[i], "NO", 2);
 	if (elem[0][1] == 0)

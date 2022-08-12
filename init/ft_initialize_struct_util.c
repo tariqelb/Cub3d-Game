@@ -43,30 +43,19 @@ int	ft_get_numbers(char *elem)
 
 void	*ft_get_texture(t_cub3d **cub, void *texture, char *elem)
 {
-	char	*tmp;
+	char	**tmp;
 	int		h;
 	int		w;
-	int		i;
 
-	i = 0;
-	while (elem[i] && elem[i] == ' ')
-		i++;
-	i = i + 2;
-	while (elem[i] && elem[i] == ' ')
-		i++;
+	tmp = NULL;
+	tmp = ft_split(elem, ' ');
 	h = 50;
 	w = 50;
-	tmp = NULL;
-	tmp = ft_strdup(&elem[i]);
-	i = 0;
-	while (tmp[i])
-		i++;
-	if (tmp[i - 1] == '\n')
-		tmp[i - 1] = 0;
 	texture = NULL;
-	texture = mlx_xpm_file_to_image(cub[0]->mlx, tmp, &h, &w);
+	if (ft_strlen_tab(tmp) >= 1)
+		texture = mlx_xpm_file_to_image(cub[0]->mlx, tmp[1], &h, &w);
 	if (tmp != NULL)
-		free(tmp);
+		ft_free_tab(tmp, NULL, NULL);
 	return (texture);
 }
 
@@ -102,21 +91,21 @@ int	ft_fill_cub(t_cub3d **cub, char **elems)
 	i = -1;
 	while (++i < 6)
 	{
-		if (ft_strncmp(elems[i], "NO ", 3) == 0)
+		if (ft_strncmp_skip(elems[i], "NO ", 3) == 0)
 			cub[0]->n_txtr.txt = ft_get_texture(&cub[0],
 					cub[0]->n_txtr.txt, elems[i]);
-		else if (ft_strncmp(elems[i], "SO ", 3) == 0)
+		else if (ft_strncmp_skip(elems[i], "SO ", 3) == 0)
 			cub[0]->s_txtr.txt = ft_get_texture(&cub[0],
 					cub[0]->s_txtr.txt, elems[i]);
-		else if (ft_strncmp(elems[i], "WE ", 3) == 0)
+		else if (ft_strncmp_skip(elems[i], "WE ", 3) == 0)
 			cub[0]->w_txtr.txt = ft_get_texture(&cub[0],
 					cub[0]->w_txtr.txt, elems[i]);
-		else if (ft_strncmp(elems[i], "EA ", 3) == 0)
+		else if (ft_strncmp_skip(elems[i], "EA ", 3) == 0)
 			cub[0]->e_txtr.txt = ft_get_texture(&cub[0],
 					cub[0]->e_txtr.txt, elems[i]);
-		else if (ft_strncmp(elems[i], "F ", 2) == 0)
+		else if (ft_strncmp_skip(elems[i], "F ", 2) == 0)
 			cub[0]->f = ft_get_numbers(elems[i]);
-		else if (ft_strncmp(elems[i], "C ", 2) == 0)
+		else if (ft_strncmp_skip(elems[i], "C ", 2) == 0)
 			cub[0]->c = ft_get_numbers(elems[i]);
 	}
 	if (ft_check_texture(&cub[0]))
@@ -134,6 +123,7 @@ int	ft_fill_cub_elems(t_cub3d **cub, char *av)
 	n = ft_number_of_lines_in_file(av);
 	elems = (char **) malloc(sizeof(char *) * (n + 1));
 	elems = ft_fill_elem(av, &elems);
+	ft_remove_newline(&elems[0], ft_strlen_tab(elems));
 	if (ft_fill_cub(&cub[0], elems))
 	{
 		ft_free_tab(elems, NULL, NULL);

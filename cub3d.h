@@ -154,6 +154,7 @@ int		ft_odd_quote(const char *s, int index);
 char	**ft_split_case(char const *s, char c);
 //init dir
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp_skip(char *s1, char *s2, size_t n);
 
 // INIT
 // ft_initialize_struct_util.c
