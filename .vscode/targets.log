@@ -7,8 +7,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `cub3d.o', needed by `cub3d'.  Stop.
 
-# Make data base, printed on Fri Aug 12 20:19:58 2022
+
+# Make data base, printed on Sat Aug 13 10:47:01 2022
 
 # Variables
 
@@ -31,14 +33,13 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
- 
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 32)
 OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.7MbvR3bjG4/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.qDkZHj7XgJ/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
@@ -48,7 +49,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.NO2kQXRBaK/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0AOumxsLTR/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -118,15 +119,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.1160
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x10D2:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -137,8 +136,6 @@ MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL  -framework AppKit
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -152,9 +149,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 6040
+VSCODE_PID = 26115
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=3/98=3%
+# Load=68/1024=7%, Rehash=0, Collisions=3/96=3%
 
 # Pattern-specific Variable Values
 
@@ -162,9 +159,9 @@ VSCODE_PID = 6040
 
 # Directories
 
-# . (device 16777227, inode 619130): 16 files, no impossibilities.
+# . (device 16777227, inode 619130): 14 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -174,37 +171,27 @@ VSCODE_PID = 6040
 
 # Not a target:
 parse_map/ft_strcmp.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_strdup.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_free.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: cub3d
 #  Command-line target.
 #  Implicit rule search has not been done.
-#  Last modified 1969-12-31 23:59:56
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 43):
@@ -212,36 +199,26 @@ all: cub3d
 
 # Not a target:
 parse_map/ft_parse_map_utils.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_there_is_a_wall_in_my_way.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_new_position_calc.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 cub3d: cub3d.o parse_map/ft_parse_map.o parse_map/ft_check_elems.o parse_map/ft_check_elems_util.o parse_map/ft_check_map.o parse_map/ft_check_map_again.o parse_map/ft_check_map_again_util.o parse_map/ft_check_map_util.o parse_map/ft_split.o parse_map/ft_strdup.o parse_map/ft_strcmp.o parse_map/ft_strlen_tab.o parse_map/ft_free.o parse_map/ft_atoi.o parse_map/ft_split_quote.o parse_map/ft_parse_map_utils.o get_next_line/get_next_line.o get_next_line/get_next_line_utils.o init/ft_initialize_struct.o init/ft_initialize_struct_util.o init/ft_strncmp.o init/ft_check_digit.o convert_2d_to_3d/ft_display.o convert_2d_to_3d/ft_event_handler.o convert_2d_to_3d/ft_mini_map.o convert_2d_to_3d/ft_micro_map.o move_player/ft_isnt_a_wall.o move_player/ft_there_is_a_wall.o move_player/ft_new_position_calc.o move_player/ft_straight_move.o move_player/ft_move_player.o move_player/ft_simple_position_calc.o move_player/ft_corner.o move_player/ft_new_position_calc_sides.o move_player/ft_there_is_a_wall_sides.o move_player/ft_isnt_a_wall_sides.o move_player/ft_simple_position_calc_sides.o move_player/ft_there_is_a_wall_in_my_way.o ray_casting/ft_ray_casting.o ray_casting/ft_triangle_calculation.o ray_casting/ft_get_color.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-12 19:17:48
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 45):
@@ -250,58 +227,42 @@ cub3d: cub3d.o parse_map/ft_parse_map.o parse_map/ft_check_elems.o parse_map/ft_
 
 # Not a target:
 get_next_line/get_next_line_utils.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
- 
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 cub3d.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 parse_map/ft_atoi.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 init/ft_strncmp.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 init/ft_initialize_struct_util.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_corner.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -320,57 +281,39 @@ Makefile:
 
 # Not a target:
 move_player/ft_there_is_a_wall_sides.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 convert_2d_to_3d/ft_mini_map.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_isnt_a_wall_sides.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 ray_casting/ft_get_color.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 init/ft_initialize_struct.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 ray_casting/ft_triangle_calculation.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Implicit rule search has not been done.
@@ -382,84 +325,57 @@ fclean: clean
 
 # Not a target:
 parse_map/ft_strlen_tab.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_parse_map.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_split.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_there_is_a_wall.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_check_elems_util.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 init/ft_check_digit.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 convert_2d_to_3d/ft_micro_map.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_isnt_a_wall.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 get_next_line/get_next_line.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -469,21 +385,15 @@ get_next_line/get_next_line.o:
 
 # Not a target:
 parse_map/ft_split_quote.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_simple_position_calc_sides.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Implicit rule search has not been done.
@@ -492,21 +402,15 @@ re: fclean all
 
 # Not a target:
 parse_map/ft_check_map_util.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_check_map_again_util.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Implicit rule search has not been done.
@@ -518,94 +422,63 @@ clean:
 
 # Not a target:
 convert_2d_to_3d/ft_display.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 convert_2d_to_3d/ft_event_handler.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_check_elems.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_straight_move.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
- 
 move_player/ft_simple_position_calc.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_move_player.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_check_map.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 parse_map/ft_check_map_again.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:44
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 ray_casting/ft_ray_casting.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 move_player/ft_new_position_calc_sides.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-12 19:17:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
 # Load=49/1024=5%, Rehash=0, Collisions=2/107=2%
@@ -620,6 +493,6 @@ move_player/ft_new_position_calc_sides.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug 12 20:19:58 2022
+# Finished Make data base on Sat Aug 13 10:47:01 2022
 
  
