@@ -75,6 +75,24 @@ int	ft_is_one_or_three_digit(char *nbr)
 	return (0);
 }
 
+int	ft_count_comma(char *line)
+{
+	int	i;
+	int	sum;
+
+	sum = 0;
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == ',')
+			sum++;
+		i++;
+	}
+	if (sum == 2)
+		return (0);
+	return (1);
+}
+
 int	ft_is_color(char *line)
 {
 	char	**nbr;
@@ -84,7 +102,7 @@ int	ft_is_color(char *line)
 	if (nbr == NULL)
 		return (0);
 	i = ft_strlen_tab(nbr);
-	if (i != 3)
+	if (i != 3 || ft_count_comma(line))
 	{
 		nbr = ft_free_tab(nbr, NULL, NULL);
 		return (1);
